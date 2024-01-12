@@ -2,8 +2,8 @@
 <resource xsi:type="vt:ServiceStandard" status="active"
           created="2000-01-01T09:00:00" updated="2000-01-01T09:00:00"
           xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
-          xmlns:vt="http://www.ivoa.net/xml/VOStandard/v0.1" 
-          xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" 
+          xmlns:vt="http://www.ivoa.net/xml/VOStandard/v0.1"
+          xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <title>   Simple Image Access Protocol   </title>
@@ -41,7 +41,7 @@
         access reference URL may be used to retrieve the image. Images
         may be returned in a variety of formats including FITS and
         various graphics formats. Referenced images are often computed
-        on the fly, e.g., as cutouts from larger images. 
+        on the fly, e.g., as cutouts from larger images.
       </description>
       <referenceURL>
          http://www.ivoa.net/Documents/latest/SIA.html
@@ -57,14 +57,14 @@
        <queryType>GET</queryType>
        <resultType>text/xml+votable</resultType>
 
-       <!-- 
-         -  These are the standard input parameters defined in the 
+       <!--
+         -  These are the standard input parameters defined in the
          -  SIA spec
          -->
        <param use="required">
          <name>POS</name>
          <description>
-            Search Position in the form "ra,dec" where ra and dec are given 
+            Search Position in the form "ra,dec" where ra and dec are given
             in decimal degrees in the ICRS coordinate system.
          </description>
          <unit>degrees</unit>
@@ -73,7 +73,7 @@
        <param use="required">
          <name>SIZE</name>
          <description>
-            Size of search region in the RA and Dec. directions in decimal 
+            Size of search region in the RA and Dec. directions in decimal
             degrees.
          </description>
          <unit>degrees</unit>
@@ -87,7 +87,7 @@
        <param use="optional">
          <name>INTERSECT</name>
          <description>
-           Choice of intersection of matched images with the region of 
+           Choice of intersection of matched images with the region of
            interest.
          </description>
          <dataType>string</dataType>
@@ -109,8 +109,8 @@
        <param use="ignored">
          <name>EQUINOX</name>
          <description>
-           the epoch of the mean equator and equinox for the specified 
-           coordinate system reference frame (CFRAME). coordinate frame to 
+           the epoch of the mean equator and equinox for the specified
+           coordinate system reference frame (CFRAME). coordinate frame to
            impose on the image.
          </description>
          <dataType>string</dataType>
@@ -160,5 +160,5 @@
          <dataType>string</dataType>
        </param>
     </interface>
-   
+
 </resource>

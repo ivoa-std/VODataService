@@ -3,8 +3,8 @@
           created="2000-01-01T09:00:00" updated="2000-01-01T09:00:00"
           xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
           xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1"
-          xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" 
-          xmlns:xlink="http://www.w3.org/1999/xlink" 
+          xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <title>NCSA BIMA Data Archive</title>
@@ -34,7 +34,7 @@
       <subject>data repositories</subject>
       <subject>digital libraries</subject>
       <description>
-         The BIMA Data Archive provides access to all raw visibility and 
+         The BIMA Data Archive provides access to all raw visibility and
          derived products from the Berkeley-Illinois-Maryland Association
          Millimeter Array Telescope.
       </description>
@@ -58,14 +58,14 @@
             xmlns="http://www.ivoa.net/xml/STC/stc-v1.30.xsd">
 
           <AstroCoordSystem xlink:type="simple"
-                            xlink:href="ivo://STClib/CoordSys#UTC-FK5-TOPO" 
-                            id="UTC-FK5-TOPO"/> 
+                            xlink:href="ivo://STClib/CoordSys#UTC-FK5-TOPO"
+                            id="UTC-FK5-TOPO"/>
 
           <AstroCoords coord_system_id="UTC-FK5-TOPO">
              <Time unit="s">
                 <!-- Uncertainty.Temporal -->
                 <Error>1</Error>
-                
+
                 <!-- Resolution.Temporal -->
                 <Resolution>10</Resolution>
                 <Resolution>120</Resolution>
@@ -74,7 +74,7 @@
              <Position1D>
                 <!-- Uncertainty.Spatial -->
                 <Error pos_unit="arcsec">0.25</Error>
-                
+
                 <!-- Resolution.Spatial -->
                 <Resolution pos_unit="arcsec">1</Resolution>
                 <Resolution pos_unit="arcsec">30</Resolution>
@@ -87,7 +87,7 @@
              <Spectral>
                 <!-- Uncertainty.Spatial -->
                 <Error spectral_unit="kHz">12</Error>
-                
+
                 <!-- Resolution.Spectral -->
                 <Resolution spectral_unit="kHz">6.1</Resolution>
                 <Resolution spectral_unit="GHz">1.0</Resolution>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://www.ivoa.net/xml/VODataService/v1.1" 
-           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-           xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" 
-           xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" 
-           xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" 
+<xs:schema targetNamespace="http://www.ivoa.net/xml/VODataService/v1.1"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
+           xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1"
+           xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd"
            xmlns:vm="http://www.ivoa.net/xml/VOMetadata/v0.1"
            elementFormDefault="unqualified" attributeFormDefault="unqualified"
            version="1.2">
@@ -15,7 +15,7 @@
         <vm:targetPrefix>vs</vm:targetPrefix>
       </xs:appinfo>
       <xs:documentation>
-        An extension to the core resource metadata (VOResource) for 
+        An extension to the core resource metadata (VOResource) for
         describing data collections and services.
       </xs:documentation>
    </xs:annotation>
@@ -28,12 +28,12 @@
    <xs:complexType name="DataCollection">
       <xs:annotation>
          <xs:documentation>
-           A logical grouping of data which, in general, is composed of one 
+           A logical grouping of data which, in general, is composed of one
            or more accessible datasets.  A collection can contain any
-           combination of images, spectra, catalogues, or other data.   
+           combination of images, spectra, catalogues, or other data.
          </xs:documentation>
          <xs:documentation>
-           (A dataset is a collection of digitally-encoded data that 
+           (A dataset is a collection of digitally-encoded data that
            is normally accessible as a single unit, e.g., a file.)
          </xs:documentation>
          <xs:documentation>
@@ -47,21 +47,21 @@
       <xs:complexContent>
          <xs:extension base="vr:Resource">
             <xs:sequence>
- 
-              <xs:element name="facility" type="vr:ResourceName" 
+
+              <xs:element name="facility" type="vr:ResourceName"
                           minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                    <xs:appinfo>
                      <vm:dcterm>Subject</vm:dcterm>
                    </xs:appinfo>
                    <xs:documentation>
-                     the observatory or facility used to collect the data 
-                     contained or managed by this resource.  
+                     the observatory or facility used to collect the data
+                     contained or managed by this resource.
                    </xs:documentation>
                 </xs:annotation>
               </xs:element>
 
-              <xs:element name="instrument" type="vr:ResourceName" 
+              <xs:element name="instrument" type="vr:ResourceName"
                           minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                    <xs:appinfo>
@@ -69,18 +69,18 @@
                      <vm:dcterm>Subject.Instrument</vm:dcterm>
                    </xs:appinfo>
                    <xs:documentation>
-                     the Instrument used to collect the data contain or 
-                     managed by a resource.  
+                     the Instrument used to collect the data contain or
+                     managed by a resource.
                    </xs:documentation>
                 </xs:annotation>
               </xs:element>
 
-              <xs:element name="rights" type="vr:Rights" 
+              <xs:element name="rights" type="vr:Rights"
                           minOccurs="0" maxOccurs="unbounded">
                  <xs:annotation>
                     <xs:appinfo>
                       <vm:dcterm>Rights</vm:dcterm>
-                    </xs:appinfo>           
+                    </xs:appinfo>
                     <xs:documentation>
                       Information about rights held in and over the resource.
                     </xs:documentation>
@@ -90,16 +90,16 @@
                  </xs:annotation>
               </xs:element>
 
-              <xs:element name="format" type="vs:Format" 
+              <xs:element name="format" type="vs:Format"
                           minOccurs="0" maxOccurs="unbounded">
                  <xs:annotation>
                     <xs:documentation>
-                      The physical or digital manifestation of the information 
+                      The physical or digital manifestation of the information
                       supported by a resource.
                     </xs:documentation>
                     <xs:documentation>
-                      This should use RFC 2046 media (“MIME”) types for 
-                      network-retrievable, digital data.  
+                      This should use RFC 2046 media (“MIME”) types for
+                      network-retrievable, digital data.
                       Non-RFC 2046 values could be used for media that cannot
                       be retrieved over the network.
                     </xs:documentation>
@@ -109,7 +109,7 @@
               <xs:element name="coverage" type="vs:Coverage" minOccurs="0">
                 <xs:annotation>
                    <xs:documentation>
-                     Extent of the content of the resource over space, time, 
+                     Extent of the content of the resource over space, time,
                      and frequency.
                    </xs:documentation>
                 </xs:annotation>
@@ -119,7 +119,7 @@
                  <xs:annotation>
                    <xs:documentation>
                      A description of the tables that are part of this
-                     collection. 
+                     collection.
                    </xs:documentation>
                    <xs:documentation>
                      Each schema name must be
@@ -137,7 +137,7 @@
               <xs:element name="accessURL" type="vr:AccessURL" minOccurs="0">
                  <xs:annotation>
                    <xs:documentation>
-                     The URL that can be used to download the data contained in 
+                     The URL that can be used to download the data contained in
                      this data collection.
                    </xs:documentation>
                  </xs:annotation>
@@ -161,12 +161,12 @@
             <xs:attribute name="frame" type="xs:token">
                <xs:annotation>
                   <xs:documentation>
-                     When present, the MOC is written in a non-celestial (e.g., 
+                     When present, the MOC is written in a non-celestial (e.g.,
                      planetary) frame.  Note that for celestial coverages,
                      ICRS must be used.
                   </xs:documentation>
                   <xs:documentation>
-                     VODataService 1.2 does not prescribe a vocabulary for 
+                     VODataService 1.2 does not prescribe a vocabulary for
                      what values are allowed here.  As
                      long as no such vocabulary is agreed upon, the frame
                      attribute should not be set.
@@ -182,7 +182,7 @@
          <xs:documentation>
            A description of how a resource's contents or behavior maps
            to the sky, to time, and to frequency space, including
-           coverage and resolution. 
+           coverage and resolution.
          </xs:documentation>
       </xs:annotation>
 
@@ -191,8 +191,8 @@
          <xs:element ref="stc:STCResourceProfile" minOccurs="0">
             <xs:annotation>
                <xs:documentation>
-                 An STC 1.0 description of the location of the resource's 
-                 data on the sky, in time, and in frequency space, 
+                 An STC 1.0 description of the location of the resource's
+                 data on the sky, in time, and in frequency space,
                  including resolution.   This is deprecated in favour
                  of the separate spatial, temporal, and spectral elements.
                </xs:documentation>
@@ -203,11 +203,11 @@
                minOccurs="0">
             <xs:annotation>
                <xs:documentation>
-                  An ASCII-serialized MOC defining the spatial coverage 
+                  An ASCII-serialized MOC defining the spatial coverage
                   of the resource.
                </xs:documentation>
                <xs:documentation>
-                  The MOC is to be understood in the ICRS reference frame 
+                  The MOC is to be understood in the ICRS reference frame
                   unless a frame attribute is given.
                   Resources should give the coverage at least to order 6
                   (a resolution of about one degree).  The order should be
@@ -222,11 +222,11 @@
                maxOccurs="unbounded">
             <xs:annotation>
                <xs:documentation>
-                  A pair of lower, upper limits of a time interval 
+                  A pair of lower, upper limits of a time interval
                   for which the resource offers data.
                </xs:documentation>
                <xs:documentation>
-                  This is written as for VOTable tabledata (i.e., 
+                  This is written as for VOTable tabledata (i.e.,
                   whitespace-separated C-style floating point literals), as
                   in “47847.2 51370.2”.
                   The limits must be given as MJD.  While they
@@ -241,14 +241,14 @@
                maxOccurs="unbounded">
             <xs:annotation>
                <xs:documentation>
-                  A pair of lower, upper limits of a spectral interval 
+                  A pair of lower, upper limits of a spectral interval
                   for which the resource offers data.
                </xs:documentation>
                <xs:documentation>
-                  This is written as for VOTable tabledata (i.e., 
+                  This is written as for VOTable tabledata (i.e.,
                   whitespace-separated C-style floating point literals).
                   The limits must be given in Joules of particle
-                  energies.  While the limits are not intended 
+                  energies.  While the limits are not intended
                   to be precise, they are to be understood for the
                   solar system barycenter.
                </xs:documentation>
@@ -259,17 +259,17 @@
             </xs:annotation>
          </xs:element>
 
-         <xs:element name="footprint" 
+         <xs:element name="footprint"
                type="vs:ServiceReference" minOccurs="0">
             <xs:annotation>
                <xs:documentation>
-                  A reference to a footprint service for retrieving 
-                  precise and up-to-date description of coverage.  
+                  A reference to a footprint service for retrieving
+                  precise and up-to-date description of coverage.
                </xs:documentation>
                <xs:documentation>
                   The ivo-id attribute here refers to the standard in which
-                  the footprint is given.  The only value defined by 
-                  VODataService at this point is ivo://ivoa.net/std/moc, 
+                  the footprint is given.  The only value defined by
+                  VODataService at this point is ivo://ivoa.net/std/moc,
                   which indicates that retrieving the footprint URL will return
                   a MOC (any IVOA-approved serialisation is legal).  Note that
                   the ivo-id attribute was intended to have a different
@@ -279,16 +279,16 @@
             </xs:annotation>
          </xs:element>
 
-         <xs:element name="waveband" type="xs:token" 
+         <xs:element name="waveband" type="xs:token"
                      minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
                <xs:appinfo>
                  <vm:dcterm>Coverage.Spectral</vm:dcterm>
-               </xs:appinfo>           
+               </xs:appinfo>
                <xs:documentation>
                   A name of a messenger that the resource is relevant for
                   (e.g., was used in the measurements).  Terms must
-                  be taken from the vocabulary at 
+                  be taken from the vocabulary at
                   http://www.ivoa.net/rdf/messenger.
                </xs:documentation>
                <xs:documentation>
@@ -305,12 +305,12 @@
             <xs:annotation>
                <xs:appinfo>
                  <vm:dcterm>Coverage.RegionOfRegard</vm:dcterm>
-               </xs:appinfo>           
+               </xs:appinfo>
                <xs:documentation>
                   A single numeric value representing the angle, given
                   in decimal degrees, by which a positional query
                   against this resource should be “blurred” in order
-                  to get an appropriate match. 
+                  to get an appropriate match.
                </xs:documentation>
                <xs:documentation>
                   In the case of image repositories, it might refer to
@@ -319,38 +319,38 @@
                   of object catalogues RoR should normally be the
                   largest of the typical size of the objects, the
                   astrometric errors in the positions, or the
-                  resolution of the data.  
+                  resolution of the data.
                </xs:documentation>
             </xs:annotation>
          </xs:element>
 
-      </xs:sequence>            
+      </xs:sequence>
    </xs:complexType>
 
    <xs:complexType name="ServiceReference">
       <xs:annotation>
          <xs:documentation>
            The service URL for a potentially registered service.  That is,
-           if an IVOA identifier is also provided, then the service is 
+           if an IVOA identifier is also provided, then the service is
            described in a registry.
          </xs:documentation>
       </xs:annotation>
 
       <xs:simpleContent>
-         <xs:extension base="xs:anyURI"> 
+         <xs:extension base="xs:anyURI">
 
             <xs:attribute name="ivo-id" type="vr:IdentifierURI">
                <xs:annotation>
                  <xs:documentation>
-                   The URI form of the IVOA identifier for the service 
+                   The URI form of the IVOA identifier for the service
                    describing the capability refered to by this element.
                  </xs:documentation>
                </xs:annotation>
             </xs:attribute>
 
-         </xs:extension>       
+         </xs:extension>
       </xs:simpleContent>
-   </xs:complexType>   
+   </xs:complexType>
 
    <xs:complexType name="TableSet">
       <xs:annotation>
@@ -361,7 +361,7 @@
 
       <xs:sequence>
 
-         <xs:element name="schema" type="vs:TableSchema" 
+         <xs:element name="schema" type="vs:TableSchema"
                      minOccurs="1" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>
@@ -372,7 +372,7 @@
                 be unique within this TableSet instance.  If there is
                 only one schema in this set and/or there is no locally
                 appropriate name to provide, the name can be set to
-                “default”.  
+                “default”.
               </xs:documentation>
               <xs:documentation>
                 This aggregation does not need to map to an
@@ -394,7 +394,7 @@
 
       <xs:anyAttribute namespace="##other" />
    </xs:complexType>
-  
+
    <xs:complexType name="TableSchema">
       <xs:annotation>
          <xs:documentation>
@@ -406,7 +406,7 @@
          <xs:element name="name" type="xs:token" minOccurs="1">
            <xs:annotation>
              <xs:documentation>
-               A name for the group of tables.  
+               A name for the group of tables.
              </xs:documentation>
              <xs:documentation>
                This is used to uniquely identify the group of tables among
@@ -416,15 +416,15 @@
              <xs:documentation>
                If there is no appropriate logical name associated with
                this group, the name should be explicitly set to
-               “default”.  
+               “default”.
              </xs:documentation>
            </xs:annotation>
          </xs:element>
-          
+
          <xs:element name="title" type="xs:token" minOccurs="0">
             <xs:annotation>
                <xs:documentation>
-                  A descriptive, human-interpretable name for the group of 
+                  A descriptive, human-interpretable name for the group of
                   tables.
                </xs:documentation>
                <xs:documentation>
@@ -437,12 +437,12 @@
             </xs:annotation>
          </xs:element>
 
-         <xs:element name="description" type="xs:token" 
+         <xs:element name="description" type="xs:token"
                      minOccurs="0">
            <xs:annotation>
              <xs:documentation>
                A free text description of the group of tables that should
-               explain in general how all of the tables in the group are 
+               explain in general how all of the tables in the group are
                related.
              </xs:documentation>
            </xs:annotation>
@@ -452,7 +452,7 @@
             <xs:annotation>
                <xs:documentation>
                   An identifier for a concept in a data model that
-                  the data in this schema as a whole represent.  
+                  the data in this schema as a whole represent.
                </xs:documentation>
                <xs:documentation>
                   The form of the utype string depends on the data
@@ -462,7 +462,7 @@
             </xs:annotation>
          </xs:element>
 
-         <xs:element name="table" type="vs:Table" 
+         <xs:element name="table" type="vs:Table"
                      minOccurs="0" maxOccurs="unbounded">
            <xs:annotation>
              <xs:documentation>
@@ -476,14 +476,14 @@
       <xs:anyAttribute namespace="##other" />
 
    </xs:complexType>
-  
+
    <xs:complexType name="Format">
       <xs:simpleContent>
          <xs:extension base="xs:token">
            <xs:attribute name="isMIMEType" type="xs:boolean" default="false">
              <xs:annotation>
                <xs:documentation>
-                 If true, the content of the element is an RFC 
+                 If true, the content of the element is an RFC
                  2046-compliant media time.
                </xs:documentation>
              </xs:annotation>
@@ -507,20 +507,20 @@
       <xs:complexContent>
          <xs:extension base="vr:Service">
             <xs:sequence>
-              <xs:element name="facility" type="vr:ResourceName" 
+              <xs:element name="facility" type="vr:ResourceName"
                           minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                    <xs:appinfo>
                      <vm:dcterm>Subject</vm:dcterm>
                    </xs:appinfo>
                    <xs:documentation>
-                     The observatory or facility used to collect the data 
-                     contained or managed by this resource.  
+                     The observatory or facility used to collect the data
+                     contained or managed by this resource.
                    </xs:documentation>
                 </xs:annotation>
               </xs:element>
 
-              <xs:element name="instrument" type="vr:ResourceName" 
+              <xs:element name="instrument" type="vr:ResourceName"
                           minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                    <xs:appinfo>
@@ -528,8 +528,8 @@
                      <vm:dcterm>Subject.Instrument</vm:dcterm>
                    </xs:appinfo>
                    <xs:documentation>
-                     The instrument used to collect the data contain or 
-                     managed by a resource.  
+                     The instrument used to collect the data contain or
+                     managed by a resource.
                    </xs:documentation>
                 </xs:annotation>
               </xs:element>
@@ -537,7 +537,7 @@
               <xs:element name="coverage" type="vs:Coverage" minOccurs="0">
                 <xs:annotation>
                    <xs:documentation>
-                     Extent of the content of the resource over space, time, 
+                     Extent of the content of the resource over space, time,
                      and frequency.
                    </xs:documentation>
                 </xs:annotation>
@@ -555,8 +555,8 @@
          </xs:documentation>
          <xs:documentation>
             This resource type should only be used if the service has no
-            common underlying tabular schema (e.g., a storage service) or 
-            if it is not explicitly accessible (e.g., an ftp server with 
+            common underlying tabular schema (e.g., a storage service) or
+            if it is not explicitly accessible (e.g., an ftp server with
             images).  Use CatalogService otherwise.
          </xs:documentation>
       </xs:annotation>
@@ -581,7 +581,7 @@
       <xs:complexContent>
          <xs:extension base="vr:Interface">
             <xs:sequence>
-               <xs:element name="queryType" type="vs:HTTPQueryType" 
+               <xs:element name="queryType" type="vs:HTTPQueryType"
                            minOccurs="0" maxOccurs="2">
                   <xs:annotation>
                      <xs:documentation>
@@ -599,22 +599,22 @@
                   </xs:annotation>
                </xs:element>
 
-               <xs:element name="resultType" type="xs:token" 
+               <xs:element name="resultType" type="xs:token"
                            minOccurs="0">
                   <xs:annotation>
                      <xs:documentation>
-                       The MIME media type of a document returned in 
+                       The MIME media type of a document returned in
                        the HTTP response.
                      </xs:documentation>
                   </xs:annotation>
                </xs:element>
 
-               <xs:element name="param" type="vs:InputParam" minOccurs="0" 
+               <xs:element name="param" type="vs:InputParam" minOccurs="0"
                             maxOccurs="unbounded">
                   <xs:annotation>
                     <xs:documentation>
-                       A description of a input parameter that can be 
-                       provided as a name=value argument to the service.  
+                       A description of a input parameter that can be
+                       provided as a name=value argument to the service.
                     </xs:documentation>
                   </xs:annotation>
                </xs:element>
@@ -623,15 +623,15 @@
                   <xs:annotation>
                     <xs:documentation>
                        An ampersand-delimited list of arguments that
-                       can be used to test this service interface; 
+                       can be used to test this service interface;
                        when provided as the input to this interface,
                        it will produce a legal, non-null response.
                     </xs:documentation>
                     <xs:documentation>
-                       When the interface supports GET, then the full 
-                       query URL is formed by the concatenation of the 
-                       base URL (given by the accessURL) and the value 
-                       given by this testQuery element.  
+                       When the interface supports GET, then the full
+                       query URL is formed by the concatenation of the
+                       base URL (given by the accessURL) and the value
+                       given by this testQuery element.
                     </xs:documentation>
                   </xs:annotation>
                </xs:element>
@@ -714,21 +714,21 @@
 
    <xs:complexType name="Table">
       <xs:sequence>
-         <xs:element name="name" type="xs:token" 
+         <xs:element name="name" type="xs:token"
                      minOccurs="1">
             <xs:annotation>
                <xs:documentation>
-                  The fully qualified name of the table.  This name 
+                  The fully qualified name of the table.  This name
                   should include all catalogue or schema prefixes
                   needed to sufficiently uniquely distinguish it in a
-                  query.  
+                  query.
                </xs:documentation>
                <xs:documentation>
                   In general, the format of the qualified name may
                   depend on the context; however, when the
                   table is intended to be queryable via ADQL, then the
                   catalogue and schema qualifiers are delimited from the
-                  table name with dots (.).  
+                  table name with dots (.).
                </xs:documentation>
             </xs:annotation>
          </xs:element>
@@ -740,7 +740,7 @@
                </xs:documentation>
                <xs:documentation>
                   This is used for display purposes.  There is no requirement
-                  regarding uniqueness.  
+                  regarding uniqueness.
                </xs:documentation>
             </xs:annotation>
          </xs:element>
@@ -757,7 +757,7 @@
             <xs:annotation>
                <xs:documentation>
                   An identifier for a concept in a data model that
-                  the data in this table represent.  
+                  the data in this table represent.
                </xs:documentation>
                <xs:documentation>
                   The form of the utype string depends on the data
@@ -780,7 +780,7 @@
             </xs:annotation>
          </xs:element>
 
-         <xs:element name="column" type="vs:TableParam" 
+         <xs:element name="column" type="vs:TableParam"
                      minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
                <xs:documentation>
@@ -794,8 +794,8 @@
             <xs:annotation>
                <xs:documentation>
                   A description of a foreign keys, one or more columns
-                  from the current table that can be used to join with 
-                  another table.  
+                  from the current table that can be used to join with
+                  another table.
                </xs:documentation>
             </xs:annotation>
          </xs:element>
@@ -806,12 +806,12 @@
          <xs:annotation>
             <xs:documentation>
                A name for the role this table plays.  Recognized
-               values include “output”, indicating this table is output 
+               values include “output”, indicating this table is output
                from a query; “base_table”, indicating a table
                whose records represent the main subjects of its
                schema; and “view”, indicating that the table represents
-               a useful combination or subset of other tables.  Other 
-               values are allowed.  
+               a useful combination or subset of other tables.  Other
+               values are allowed.
             </xs:documentation>
          </xs:annotation>
       </xs:attribute>
@@ -822,7 +822,7 @@
    <xs:complexType name="BaseParam">
       <xs:annotation>
          <xs:documentation>
-            A description of a parameter that places no restriction on 
+            A description of a parameter that places no restriction on
             the parameter's data type.
          </xs:documentation>
          <xs:documentation>
@@ -844,7 +844,7 @@
          <xs:element name="description" type="xs:token" minOccurs="0">
             <xs:annotation>
                <xs:documentation>
-                  A free-text description of a parameter's or column's 
+                  A free-text description of a parameter's or column's
                   contents.
                </xs:documentation>
             </xs:annotation>
@@ -866,7 +866,7 @@
                   describes the scientific content of the parameter.
                </xs:documentation>
                <xs:documentation>
-                  There are no requirements for compliance with any 
+                  There are no requirements for compliance with any
                   particular UCD standard.
                </xs:documentation>
             </xs:annotation>
@@ -876,7 +876,7 @@
             <xs:annotation>
                <xs:documentation>
                   An identifier for a concept in a data model that
-                  the data in this schema represent.  
+                  the data in this schema represent.
                </xs:documentation>
                <xs:documentation>
                   The form of the utype string depends on the data
@@ -901,7 +901,7 @@
       <xs:complexContent>
          <xs:extension base="vs:BaseParam">
             <xs:sequence>
-               <xs:element name="dataType" type="vs:TableDataType" 
+               <xs:element name="dataType" type="vs:TableDataType"
                            minOccurs="0">
                   <xs:annotation>
                      <xs:documentation>
@@ -910,13 +910,13 @@
                   </xs:annotation>
                </xs:element>
 
-               <xs:element name="flag" type="xs:token" 
+               <xs:element name="flag" type="xs:token"
                            minOccurs="0" maxOccurs="unbounded">
                   <xs:annotation>
                      <xs:documentation>
-                        A keyword representing traits of the column.  
+                        A keyword representing traits of the column.
                         Recognized values include “indexed”, “primary”, and
-                        “nullable”.  
+                        “nullable”.
                      </xs:documentation>
                      <xs:documentation>
                      	While other values are allowed, the following semantics
@@ -924,7 +924,7 @@
                      	has an index on it for faster search against its values;
                      	primary – The values column in the column represent in
                      	total or in part a primary key for its table; nullable –
-                     	the column may contain null or empty values. 
+                     	the column may contain null or empty values.
                      </xs:documentation>
                   </xs:annotation>
                </xs:element>
@@ -934,8 +934,8 @@
                <xs:annotation>
                   <xs:documentation>
                      If true, the meaning and use of this parameter is
-                     reserved and defined by a standard model.  If false, 
-                     it represents a parameter specific to the data described 
+                     reserved and defined by a standard model.  If false,
+                     it represents a parameter specific to the data described
                      If not provided, then the value is unknown.
                   </xs:documentation>
                </xs:annotation>
@@ -948,7 +948,7 @@
       <xs:annotation>
          <xs:documentation>
             A description of a service or function parameter having a
-            fixed data type. 
+            fixed data type.
          </xs:documentation>
          <xs:documentation>
          	DALI-compliant services should use VOTableType here, others
@@ -959,7 +959,7 @@
       <xs:complexContent>
          <xs:extension base="vs:BaseParam">
             <xs:sequence>
-               <xs:element name="dataType" type="vs:DataType" 
+               <xs:element name="dataType" type="vs:DataType"
                            minOccurs="0">
                   <xs:annotation>
                      <xs:documentation>
@@ -974,7 +974,7 @@
                   <xs:documentation>
                      An indication of whether this parameter is
                      required to be provided for the application
-                     or service to work properly.  
+                     or service to work properly.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
@@ -985,8 +985,8 @@
                      If true, the meaning and behavior of this parameter is
                      reserved and defined by a standard interface.  If
                      false, it represents an implementation-specific
-                     parameter that effectively extends the behavior of the 
-                     service or application.  
+                     parameter that effectively extends the behavior of the
+                     service or application.
                   </xs:documentation>
                </xs:annotation>
             </xs:attribute>
@@ -1001,7 +1001,7 @@
             <xs:annotation>
                <xs:documentation>
                   The parameter is required for the application or
-                  service to work properly.  
+                  service to work properly.
                </xs:documentation>
             </xs:annotation>
          </xs:enumeration>
@@ -1016,7 +1016,7 @@
          <xs:enumeration value="ignored">
             <xs:annotation>
                <xs:documentation>
-                  The parameter is not supported and thus is ignored by the 
+                  The parameter is not supported and thus is ignored by the
                   application or service.
                </xs:documentation>
             </xs:annotation>
@@ -1027,7 +1027,7 @@
    <xs:complexType name="DataType">
       <xs:annotation>
          <xs:documentation>
-            A type (in the computer language sense) associated with a 
+            A type (in the computer language sense) associated with a
             parameter with an arbitrary name
          </xs:documentation>
          <xs:documentation>
@@ -1059,9 +1059,9 @@
                      value in InputParams.
                   </xs:documentation>
                   <xs:documentation>
-                     Unless specifically disallowed by the context, 
-                     applications should allow optional spaces to 
-                     appear in an actual data value before and after 
+                     Unless specifically disallowed by the context,
+                     applications should allow optional spaces to
+                     appear in an actual data value before and after
                      the delimiter (e.g., “1, 5” when delim=“,”).
                   </xs:documentation>
                   <xs:documentation>
@@ -1076,7 +1076,7 @@
                <xs:annotation>
                   <xs:documentation>
                      The data value represented by this type can be
-                     interpreted as of a custom type identified by 
+                     interpreted as of a custom type identified by
                      the value of this attribute.
                   </xs:documentation>
                   <xs:documentation>
@@ -1087,8 +1087,8 @@
                   </xs:documentation>
                   <xs:documentation>
                      This element may make use of the extendedSchema
-                     attribute to refine the identification of the 
-                     type.  extendedTypes without an extendedSchema 
+                     attribute to refine the identification of the
+                     type.  extendedTypes without an extendedSchema
                      mean VOTable xtypes as defined by DALI.
                   </xs:documentation>
                </xs:annotation>
@@ -1123,9 +1123,9 @@
             An expression of a the shape of a multi-dimensional array
             of the form LxNxM... where each value between gives the
             integer length of the array along a dimension.  An
-            asterisk (*) as the last dimension of the shape indicates 
+            asterisk (*) as the last dimension of the shape indicates
             that the length of the last axis is variable or
-            undetermined. 
+            undetermined.
          </xs:documentation>
       </xs:annotation>
 
@@ -1137,11 +1137,11 @@
    <xs:complexType name="SimpleDataType">
       <xs:annotation>
          <xs:documentation>
-            A data type restricted to a small set of names which is 
+            A data type restricted to a small set of names which is
             imprecise as to the format of the individual values.
          </xs:documentation>
          <xs:documentation>
-            This set is intended for describing simple input parameters to 
+            This set is intended for describing simple input parameters to
             a service or function.
          </xs:documentation>
       </xs:annotation>
@@ -1241,7 +1241,7 @@
    <xs:complexType name="TAPDataType" abstract="true">
       <xs:annotation>
          <xs:documentation>
-            An abstract parent for the specific data types supported 
+            An abstract parent for the specific data types supported
             by the Table Access Protocol.
          </xs:documentation>
       </xs:annotation>
@@ -1255,7 +1255,7 @@
                  <xs:documentation>
                     This corresponds to the size Column attribute in
                     the TAP_SCHEMA and can be used with data types
-                    that are defined with a length (CHAR, BINARY).  
+                    that are defined with a length (CHAR, BINARY).
                  </xs:documentation>
               </xs:annotation>
            </xs:attribute>
@@ -1266,7 +1266,7 @@
    <xs:complexType name="TAPType">
       <xs:annotation>
          <xs:documentation>
-            A data type supported explicitly by the Table Access 
+            A data type supported explicitly by the Table Access
             Protocol (v1.0).  This is deprecated in VODataService 1.2,
             and even TAP 1.0 services are encouraged to declare
             their columns using VOTableType.
@@ -1316,8 +1316,8 @@
       <xs:complexContent>
          <xs:extension base="vr:Resource">
             <xs:sequence>
-               
-               <xs:element name="stcDefinitions" 
+
+               <xs:element name="stcDefinitions"
                            type="stc:stcDescriptionType"
                            minOccurs="1" maxOccurs="unbounded">
                   <xs:annotation>
@@ -1330,9 +1330,9 @@
                        should have a an XML ID assigned to it.
                      </xs:documentation>
                      <xs:documentation>
-                       Because the STC schema sets 
+                       Because the STC schema sets
                        elementFormDefault="qualified", it is
-                       recommended that this element specify the STC 
+                       recommended that this element specify the STC
                        default namespace via an xmlns namespace.
                      </xs:documentation>
                   </xs:annotation>
@@ -1346,8 +1346,8 @@
    <xs:complexType name="ForeignKey">
       <xs:annotation>
          <xs:documentation>
-           A description of the mapping a foreign key -- a set of 
-           columns from one table -- to columns in another table.  
+           A description of the mapping a foreign key -- a set of
+           columns from one table -- to columns in another table.
          </xs:documentation>
          <xs:documentation>
             When foreign keys are declared in this way, clients can expect
@@ -1362,19 +1362,19 @@
            <xs:annotation>
              <xs:documentation>
                The fully qualified name (including catalogue and schema, as
-               applicable) of the table that can be joined with the 
+               applicable) of the table that can be joined with the
                table containing this foreign key.
              </xs:documentation>
            </xs:annotation>
          </xs:element>
 
-         <xs:element name="fkColumn" type="vs:FKColumn" 
+         <xs:element name="fkColumn" type="vs:FKColumn"
                      minOccurs="1" maxOccurs="unbounded">
            <xs:annotation>
              <xs:documentation>
                A pair of column names, one from this table and one
                from the target table that should be used to join the
-               tables in a query.  
+               tables in a query.
              </xs:documentation>
            </xs:annotation>
          </xs:element>
@@ -1383,7 +1383,7 @@
             <xs:annotation>
                <xs:documentation>
                   A free-text description of what this key points to
-                  and what the relationship means.  
+                  and what the relationship means.
                </xs:documentation>
             </xs:annotation>
          </xs:element>
@@ -1392,7 +1392,7 @@
             <xs:annotation>
                <xs:documentation>
                   An identifier for a concept in a data model that
-                  the association enabled by this key represents.  
+                  the association enabled by this key represents.
                </xs:documentation>
                <xs:documentation>
                   The form of the utype string depends on the data
@@ -1408,15 +1408,15 @@
    <xs:complexType name="FKColumn">
       <xs:annotation>
          <xs:documentation>
-           A pair of columns that are used to join two tables.  
+           A pair of columns that are used to join two tables.
          </xs:documentation>
          <xs:documentation>
-           To do an inner join of data from the two tables, a query should 
+           To do an inner join of data from the two tables, a query should
            include a constraint that sets the value from the first column equal
            to the value in the second column.
          </xs:documentation>
          <xs:documentation>
-           This type assumes that it is used in the context of 
+           This type assumes that it is used in the context of
            implied source (i.e., current) and target tables, as in
            the ForeignKey type's fkColumn.
          </xs:documentation>
@@ -1450,8 +1450,8 @@
          <xs:documentation>
             This uses VOTable TABLEDATA serialisation, i.e., simply
             a pair of XSD floating point numbers separated by whitespace;
-            note that software utilising non-XSD aware parsers has to 
-            perform whitespace normalisation itself here (in particular, 
+            note that software utilising non-XSD aware parsers has to
+            perform whitespace normalisation itself here (in particular,
             for the internal whitespace).
          </xs:documentation>
       </xs:annotation>

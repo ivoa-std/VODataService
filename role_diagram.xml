@@ -1,8 +1,8 @@
 <!--
-Document authors: 
+Document authors:
 
 Remove all <rec> elements in there referring to standards not related
-to the current one, then say 
+to the current one, then say
 
 make archdiag.pdf
 

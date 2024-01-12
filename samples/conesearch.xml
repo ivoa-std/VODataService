@@ -4,8 +4,8 @@
           xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
           xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1"
           xmlns:cs="http://www.ivoa.net/xml/ConeSearch/v1.0"
-          xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" 
-          xmlns:xlink="http://www.w3.org/1999/xlink" 
+          xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <title>NCSA Astronomy Digital Image Library Cone Search</title>
@@ -31,8 +31,8 @@
       <subject>data repositories</subject>
       <subject>digital libraries</subject>
       <description>
-         This Cone Search implementation allows clients to progrommatically 
-         search for images in the ADIL that overlap with the given cone.  
+         This Cone Search implementation allows clients to progrommatically
+         search for images in the ADIL that overlap with the given cone.
       </description>
       <referenceURL>http://adil.ncsa.uiuc.edu/</referenceURL>
       <type>Archive</type>
@@ -48,7 +48,7 @@
       </relationship>
     </content>
 
-    <capability xsi:type="cs:ConeSearch" 
+    <capability xsi:type="cs:ConeSearch"
                 standardID="ivo://ivoa.net/std/ConeSearch">
 
        <interface xsi:type="vs:ParamHTTP" role="std">
@@ -73,8 +73,8 @@
             xmlns="http://www.ivoa.net/xml/STC/stc-v1.30.xsd">
 
           <AstroCoordSystem xlink:type="simple"
-                            xlink:href="ivo://STClib/CoordSys#UTC-FK5-TOPO" 
-                            id="UTC-FK5-TOPO"/> 
+                            xlink:href="ivo://STClib/CoordSys#UTC-FK5-TOPO"
+                            id="UTC-FK5-TOPO"/>
 
           <AstroCoordArea coord_system_id="UTC-FK5-TOPO">
              <AllSky/>
