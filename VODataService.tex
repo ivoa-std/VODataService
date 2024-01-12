@@ -259,7 +259,7 @@ Telescope X.} This use case could be satisfied in version 1.1 through
 the use of \xmlel{vs:DataCollection} records and relationships to the
 respective TAP services.  However, this scheme led to error-prone query
 patterns, and few such data collections were actually registered; see
-the IVOA Note on discovering data collections \citep{2019ivoa.rept.0520D} for
+the IVOA Note on discovering data collections \citep{2019ivoa.spec.0520D} for
 details.  To better support the scheme proposed there, version 1.2 adds
 the \xmlel{vs:DataResource} and \xmlel{vs:CatalogResource} types
 that identify a resource as data-like but
@@ -274,6 +274,19 @@ However, the plain table size often is a useful proxy in such discovery
 problems.  The new \xmlel{nrows} child of \xmlel{vs:Table} communicates
 it.
 
+\subsection{Additional Use Case for Version 1.3}
+
+\paragraph{Find services serving time series.} In the previous registry
+model, searches for a certain kind of data product were linked to
+searches for certain kinds of services.  For instance, clients looking
+for spectra were querying the registry for SSAP services.  This model
+was severely outdated after ObsTAP services offered -- say -- spectra,
+too.  Also SSAP services increasingly served time series as well.  Thus,
+when the IVOA product type
+vocabulary\footnote{\url{http://www.g-vo.org/rdf/product-type}} became
+available, its adoption by VODataService was natural.  It is now used
+to let data collections and services explicitly declare which sort of
+data they contain or serve.
 
 \subsection{Additional Use Cases for Future Versions}
 
@@ -297,16 +310,6 @@ between multiple services automatically, in particular cross-service
 JOINs.  In order to work efficiently, such services need column
 statistics like histograms and the percentage of NULL values.
 
-\paragraph{Find services serving time series.} In the current registry
-model, users looking for spectra would select SSAP services.  With the
-growing adoption of ObsCore (and a growing number of services abusing
-SSAP to serve time series), the model of selecting data types by
-constraining the service protocol no longer works; in the ObsCore
-example, clients now have to query all services and constrain the
-\verb|dataproduct_type| column. However, for dataset types not overly
-common, well more than 90\% of the services could be excluded without
-sending a query there based on a declaration of dataset types available
-in the Registry.
 
 \paragraph{Facilitate discovery of full DALI services.}  The issue here
 is that DALI forsees synchronous and asynchronous endpoints as the
@@ -380,7 +383,7 @@ VODataService instance documents.  Hence, the namespace URI ending in
 
 Resolving the VODataService namespace URI will redirect to a schema
 document having the actual version number (for the schema associated
-with this document version, this will end in VODataService-1.2.xsd).
+with this document version, this will end in VODataService-1.3.xsd).
 Following the schema versioning policies, the minor version will be
 declared in the \xmlel{version} attribute of this file's root element.
 This information should not in general be used in production software;
@@ -519,7 +522,7 @@ The content models of CatalogResource and CatalogService are identical.
 To understand why the two classes are present nevertheless, a short
 historical excursion is in order.  A full treatment of this is found in
 the IVOA Endorsed Note on discovering data collections within services
-\citep{2019ivoa.rept.0520D}, hereafter referred to as DDC.
+\citep{2019ivoa.spec.0520D}, hereafter referred to as DDC.
 
 In the early VO, there was almost throughout a $1:1$ relationship between
 data collections and services.  For instance, a catalogue of variable
@@ -649,11 +652,11 @@ to obtain the data, and it supports the declaration of
 the physical coverage of data via the \xmlel{coverage}
 element.
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd DataResource
+% GENERATED: !schemadoc VODataService-v1.3.xsd DataResource
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:DataResource} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:DataResource} Type Schema Documentation}
 
 \noindent{\small
            A resource publishing astronomical data.
@@ -677,6 +680,8 @@ element.
         <xs:element name="instrument" type="vr:ResourceName" minOccurs="0"
                   maxOccurs="unbounded" />
         <xs:element name="coverage" type="vs:Coverage" minOccurs="0" />
+        <xs:element name="productTypeServed" type="xs:token" minOccurs="0"
+                  maxOccurs="unbounded" />
       </xs:sequence>
     </xs:extension>
   </xs:complexContent>
@@ -713,6 +718,22 @@ element.
                      and frequency.
 
 \item[Occurrence] optional
+
+\end{description}
+\item[Element \xmlel{productTypeServed}]
+\begin{description}
+\item[Type] string: \xmlel{xs:token}
+\item[Meaning]
+	              		Collections of data products (e.g., images or spectra)
+	              		or services serving them define the type of products
+	              		they contain or serve here.  This information is intended
+	              		to enable global product discovery.  Hence, services
+	              		failing to define their product type(s) may be skipped
+	              		by clients in global discovery.  Product type names must
+	              		be taken from the IVOA vocabulary
+	              		http://www.ivoa.net/rdf/product-type.
+	              	
+\item[Occurrence] optional; multiple occurrences allowed.
 
 \end{description}
 
@@ -771,11 +792,11 @@ a service only publishes a single resource, use the
 \xmlel{vs:CatalogService} type.
 
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd CatalogResource
+% GENERATED: !schemadoc VODataService-v1.3.xsd CatalogResource
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:CatalogResource} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:CatalogResource} Type Schema Documentation}
 
 \noindent{\small
             A resource giving astronomical data in tabular form.
@@ -969,11 +990,11 @@ ground-based observatories versus the solar system barycenter matters
 are not forseen, and resource record authors are advised to pad their
 intervals on that level.
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd Coverage
+% GENERATED: !schemadoc VODataService-v1.3.xsd Coverage
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:Coverage} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:Coverage} Type Schema Documentation}
 
 \noindent{\small
            A description of how a resource's contents or behavior maps
@@ -1011,7 +1032,7 @@ intervals on that level.
 
 
 This element is imported from another schema.  See
-	     		 there for details.\item[Element \xmlel{spatial}]
+            there for details.\item[Element \xmlel{spatial}]
 \begin{description}
 \item[Type] a string with optional attributes
 \item[Meaning]
@@ -1149,11 +1170,11 @@ non-celestial coordinates, where actual, interoperable values are not
 defined here.
 
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd SpatialCoverage
+% GENERATED: !schemadoc VODataService-v1.3.xsd SpatialCoverage
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:SpatialCoverage} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:SpatialCoverage} Type Schema Documentation}
 
 \noindent{\small
             A coverage on a sphere.  By default, this refers to the
@@ -1207,11 +1228,11 @@ Coverage declaration makes use of three types, \xmlel{vs:FloatInterval},
 follows:
 
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd FloatInterval
+% GENERATED: !schemadoc VODataService-v1.3.xsd FloatInterval
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:FloatInterval} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:FloatInterval} Type Schema Documentation}
 
 \noindent{\small
             An interval of floating point numbers.
@@ -1239,11 +1260,11 @@ follows:
 
 % /GENERATED
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd ServiceReference
+% GENERATED: !schemadoc VODataService-v1.3.xsd ServiceReference
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:ServiceReference} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:ServiceReference} Type Schema Documentation}
 
 \noindent{\small
            The service URL for a potentially registered service.  That is,
@@ -1299,11 +1320,11 @@ tables.
 
 
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd TableSet
+% GENERATED: !schemadoc VODataService-v1.3.xsd TableSet
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:TableSet} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:TableSet} Type Schema Documentation}
 
 \noindent{\small
            The set of tables hosted by a resource.
@@ -1371,11 +1392,11 @@ separate \xmlel{schema} element, using the elements from
 the \xmlel{vs:TableSchema} type.
 
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd TableSchema
+% GENERATED: !schemadoc VODataService-v1.3.xsd TableSchema
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:TableSchema} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:TableSchema} Type Schema Documentation}
 
 \noindent{\small
            A detailed description of a logically related group of tables.
@@ -1485,11 +1506,11 @@ Each table in a schema is described in detail using the
 
 
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd Table
+% GENERATED: !schemadoc VODataService-v1.3.xsd Table
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{1ex}\noindent\textbf{\xmlel{vs:Table} Type Schema Definition}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{1ex}\noindent\textbf{\xmlel{vs:Table} Type Schema Definition}
 
 \begin{lstlisting}[language=XML,basicstyle=\footnotesize]
 <xs:complexType name="Table" >
@@ -1686,11 +1707,11 @@ table.  A foreign key is a set of columns that map to a corresponding
 set of columns in another table.
 
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd ForeignKey
+% GENERATED: !schemadoc VODataService-v1.3.xsd ForeignKey
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:ForeignKey} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:ForeignKey} Type Schema Documentation}
 
 \noindent{\small
            A description of the mapping a foreign key -- a set of
@@ -1844,11 +1865,11 @@ POST in which the inputs are parameters
 encoded in multipart/form-data or application/x-www-form-urlencoded
 containers.
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd ParamHTTP
+% GENERATED: !schemadoc VODataService-v1.3.xsd ParamHTTP
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:ParamHTTP} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:ParamHTTP} Type Schema Documentation}
 
 \noindent{\small
            A service invoked via an HTTP Query (either Get or Post)
@@ -2030,11 +2051,11 @@ All the VODataService parameter types derive from the base type
 metadata except the data type.
 
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd BaseParam
+% GENERATED: !schemadoc VODataService-v1.3.xsd BaseParam
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:BaseParam} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:BaseParam} Type Schema Documentation}
 
 \noindent{\small
             A description of a parameter that places no restriction on
@@ -2142,11 +2163,11 @@ XML types associated with their \xmlel{dataType} elements
 derive from a common parent, \xmlel{vs:DataType}.
 
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd DataType
+% GENERATED: !schemadoc VODataService-v1.3.xsd DataType
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:DataType} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:DataType} Type Schema Documentation}
 
 \noindent{\small
             A type (in the computer language sense) associated with a
@@ -2323,11 +2344,11 @@ sufficient for describing an input parameter to a simple REST-like
 service or a function in a weakly-typed language.  They are defined
 in \xmlel{vs:SimpleDataType}:
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd SimpleDataType
+% GENERATED: !schemadoc VODataService-v1.3.xsd SimpleDataType
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:SimpleDataType} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:SimpleDataType} Type Schema Documentation}
 
 \noindent{\small
             A data type restricted to a small set of names which is
@@ -2422,11 +2443,11 @@ defining how to use the parameter and whether or not it is defined in
 the standard governing the capability the interface is in (if any):
 
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd InputParam
+% GENERATED: !schemadoc VODataService-v1.3.xsd InputParam
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:InputParam} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:InputParam} Type Schema Documentation}
 
 \noindent{\small
             A description of a service or function parameter having a
@@ -2551,11 +2572,11 @@ The \xmlel{vs:TableParam} is also derived from
 a table.
 
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd TableParam
+% GENERATED: !schemadoc VODataService-v1.3.xsd TableParam
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:TableParam} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:TableParam} Type Schema Documentation}
 
 \noindent{\small
             A description of a table parameter having a fixed data type.
@@ -2702,11 +2723,11 @@ VODataService deprecates the use of \xmlel{vs:TAPType}.  New software
 should only generate \xmlel{vs:VOTableType}s in \xmlel{tableset}s.
 
 
-% GENERATED: !schemadoc VODataService-v1.2.xsd VOTableType
+% GENERATED: !schemadoc VODataService-v1.3.xsd VOTableType
 \begin{generated}
 \begingroup
-      	\renewcommand*\descriptionlabel[1]{%
-      	\hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:VOTableType} Type Schema Documentation}
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:VOTableType} Type Schema Documentation}
 
 \noindent{\small
             A data type supported explicitly by the VOTable format
@@ -2792,6 +2813,14 @@ explain their schema in an IVOA Note.
 \appendix
 
 \section{Changes from previous versions}
+
+\subsection{Changes since REC-1.2}
+
+\begin{itemize}
+\item Adding a \xmlel{productTypeServed} child to \xmlel{DataService};
+this is intended to replace the previous practice of choosing product
+types by service types.
+\end{itemize}
 
 \subsection{Changes since PR-20210223}
 
