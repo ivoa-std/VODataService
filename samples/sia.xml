@@ -121,6 +121,9 @@
 
     </coverage>
 
+    <productTypeServed>image</productTypeServed>
+    <productTypeServed>visibility</productTypeServed>
+
     <tableset>
     <schema>
       <name>default</name>
