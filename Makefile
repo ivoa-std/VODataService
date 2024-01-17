@@ -46,6 +46,7 @@ STILTS ?= stilts
 SCHEMA_FILE=VODataService-v1.3.xsd
 
 test:
+	sh test-assertions.sh
 	@$(STILTS) xsdvalidate $(SCHEMA_FILE)
 	@$(STILTS) xsdvalidate $(SCHEMA_FILE)
 	@ls samples/*.xml | xargs -n1 $(STILTS) xsdvalidate \
