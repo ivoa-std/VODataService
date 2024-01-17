@@ -1,8 +1,8 @@
-<ri:Resource xsi:type="vs:CatalogService" status="active" 
+<ri:Resource xsi:type="vs:CatalogService" status="active"
              updated="2018-10-25T12:22:25" created="2005-10-14T01:46:00"
-             xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" 
-             xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0" 
-             xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1" 
+             xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0"
+             xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
+             xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://www.ivoa.net/xml/VOResource/v1.0
                                  http://www.ivoa.net/xml/VOResource/v1.0
@@ -26,7 +26,7 @@
       NED is built around a master list of extragalactic objects for
       which cross-identifications of names have been established,
       accurate positions and redshifts entered to the extent possible,
-      and some basic data collected. This service will return recorded 
+      and some basic data collected. This service will return recorded
       redshifts for a given object.
     </description>
     <referenceURL>
@@ -51,7 +51,7 @@ http://nedwww.ipac.caltech.edu/cgi-bin/nph-datasearch?search_type=Redshifts&amp;
       <param use="required">
         <name>of</name>
         <description>
-        	Output format parameter, must be "xml_main" for 
+        	Output format parameter, must be "xml_main" for
         	VOTable output.
         </description>
         <dataType>string</dataType>
@@ -86,7 +86,7 @@ http://nedwww.ipac.caltech.edu/cgi-bin/nph-datasearch?search_type=Redshifts&amp;
         <column>
           <name>Name in Publication</name>
           <description>
-             The object's name in NED's standard format, of the object 
+             The object's name in NED's standard format, of the object
              to which the data apply.
           </description>
           <ucd>meta.id</ucd>
@@ -95,7 +95,7 @@ http://nedwww.ipac.caltech.edu/cgi-bin/nph-datasearch?search_type=Redshifts&amp;
         <column>
           <name>Published Velocity</name>
           <description>
-            The radial velocity , derived from derived from the shift 
+            The radial velocity , derived from derived from the shift
             of some spectral feature, in km/sec
           </description>
           <unit>km/sec</unit>

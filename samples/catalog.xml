@@ -3,14 +3,14 @@
           created="2000-01-01T09:00:00" updated="2000-01-01T09:00:00"
           xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
           xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1"
-          xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" 
-          xmlns:xlink="http://www.w3.org/1999/xlink" 
+          xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <validationLevel validatedBy="ivo://nvo.ncsa/registry"> 0 </validationLevel>
 
     <title>
-       Trapezium Multiple Systems (Salukvadze, 1978) - The Catalogue of 
+       Trapezium Multiple Systems (Salukvadze, 1978) - The Catalogue of
        Trapezium Multiple Systems
     </title>
     <shortName> I/134/data </shortName>
@@ -27,7 +27,7 @@
       <contact>
         <name>CDS support team</name>
         <address>
-          CDS, Observatoire de Strasbourg, 11 rue de l'Universite, 
+          CDS, Observatoire de Strasbourg, 11 rue de l'Universite,
           F-67000 Strasbourg, France
         </address>
         <email>question@simbad.u-strasbg.fr</email>
@@ -78,7 +78,7 @@
         mentioned spectral classes. Evaluation of the number of optical
         systems, formed as a result of the appearance of background
         stars in circles, which are determined by the upper limits of
-        components' distances, led to their insignificant number 9. 
+        components' distances, led to their insignificant number 9.
       </description>
       <source format="bibcode">1978AbaOB..49...39S</source>
       <referenceURL>
@@ -134,7 +134,7 @@
             <name>IDS</name>
             <description>
               Designation in "Index Catalogue of Visual Double Stars"
-              (based on B1900 position) 
+              (based on B1900 position)
             </description>
             <unit/>
             <ucd>ID_ALTERNATIVE</ucd>
