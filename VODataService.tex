@@ -8,6 +8,8 @@
 \lstset{flexiblecolumns=true,tagstyle=\ttfamily,showstringspaces=False}
 \usepackage{amsmath}
 \usepackage{tikz}
+\hbadness=4000
+\tolerance=3000
 
 \iftth
 \newcommand{\tapschema}{TAP\_SCHE\-MA}
@@ -394,7 +396,7 @@ other in the sense defined in the IVOA schema versioning policies.
 Authors of VOResource instance documents may choose to
 provide a location for the VOResource XML Schema document and its
 extensions using the
-\xmlel{xsi:schemaLocation} attribute.  While authors are free to
+\xmlel{xsi:schema\-Location} attribute.  While authors are free to
 choose a location (as long as it resolves to the schema document), this
 specification
 recommends using the VODataService namespace URI as its location URL
@@ -454,9 +456,9 @@ fairly typical when a TAP service contains multiple unrelated tables --,
 data providers should define separate records for them as described in
 sect.~\ref{sect:discoverdata}.
 
-VODataService further defines a specialized interface type
-(inheriting from \xmlel{vr:Interface}) called
-\xmlel{vs:ParamHTTP}.  This type is used to describe
+VODataService further defines a specialized interface type called
+\xmlel{vs:ParamHTTP}.  It inherits from \xmlel{vr:Interface}.
+This type is used to describe
 straightforward HTTP interfaces directly operating on
 arguments encoded as
 \emph{name=value} pairs.  Such interface declarations can
@@ -626,8 +628,8 @@ VODataService extension schema and describes their meaning.
 \subsection{VODataService Resource Types}
 \label{sect:resext}
 
-For an overview of the systematics of the following resource types,
-please see Sect.~\ref{sect:rescls}.
+Sect.~\ref{sect:rescls} already gave a general overview of the
+systematics of the following resource types.
 
 \subsubsection{DataResource}
 \label{sect:DataResource}
@@ -921,7 +923,7 @@ sky, in energy, and in time.
 In addition, there is the \xmlel{waveband} element that originally
 contained a qualitative indication of the location of the resource's
 coverage on the electromagnetic spectrum.  As more resources cover
-non-electromagnetic messengers, the element's meaning has somewhat
+non-elec\-tromagnetic messengers, the element's meaning has somewhat
 shifted, and it now admits values from an extendable vocabulary of
 messengers\footnote{\url{http://www.ivoa.net/rdf/messenger}} that, for
 instance, includes Neutrinos.
@@ -984,7 +986,7 @@ assumed to be of order 10 minutes.
 Deviating from common VO practice (which currently fairly consistently
 uses wavelengths of electromagnetic waves in vacuum), spectral limits are
 given in Joules of messenger energy.  This is intended to allow seamless
-integration of non-electromagnetic messengers.  The reference position
+integration of non-elec\-tromagnetic messengers.  The reference position
 for the spectral axis is the solar system barycenter.  Again, discovery
 use cases on a level where the difference between reference frames of
 ground-based observatories versus the solar system barycenter matters
@@ -1689,7 +1691,7 @@ the role a table plays in the schema.
 
 The definitions of the \xmlel{tableset} elements used in
 the \xmlel{vs:DataCollection} and
-\xmlel{vs:Catalog\-Ser\-vice} types
+\xmlel{vs:Cat\-alog\-Ser\-vice} types
 constrain certain names to be unique.  In particular, all schema names
 within a \xmlel{tableset} element must be unique, and all
 table names within a \xmlel{schema} element must be
