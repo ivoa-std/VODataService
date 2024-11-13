@@ -22,7 +22,7 @@ FIGURES = role_diagram.svg
 
 # List of PDF figures (figures that must be converted to pixel images to
 # work in web browsers).
-VECTORFIGURES = resclasses.pdf
+VECTORFIGURES = resclasses.tikz.pdf
 
 SCHEMA_FILE=VODataService-v1.3.xsd
 
@@ -32,14 +32,8 @@ AUX_FILES = $(SCHEMA_FILE)
 AUTHOR_EMAIL=msdemlei@ari.uni-heidelberg.de
 
 
-%.pdf: %.psfig
-	ps2pdf -dEPSCrop $*.psfig $*.pdf
-
-%.psfig: %.texfig
-	tex $<
-	dvips $*
-	ps2epsi $*.ps $*.psfig
-	rm $*.ps
+%.pdf: %.texfig
+	pdflatex $<
 
 -include ivoatex/Makefile
 
