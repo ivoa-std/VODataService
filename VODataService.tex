@@ -159,7 +159,7 @@ concrete classes in sect.~\ref{sect:metadata}.
 \end{figure}
 
 Fig.~\ref{fig:archdiag} shows the role VODataService plays within the
-IVOA Architecture \citep{2010ivoa.rept.1123A}.
+IVOA Architecture \citep{2021ivoa.spec.1101D}.
 
 VODataService directly depends on the following other VO standards
 (unless specified otherwise, the dependency is on the major version of
@@ -185,7 +185,7 @@ standard protocols.
 defined here into a relational structure.  In that sense it is the
 user interface to what is specified here.  RegTAP will need an update
 to support the space-time constraints added here.
-\item[MOC, v1.1 \citep{2019ivoa.spec.1007F}] Multi-Order coverage maps
+\item[MOC, v2.0 \citep{2019ivoa.spec.1007F}] Multi-Order coverage maps
 are used by VODataService to communicate spatial coverage.
 \end{description}
 
@@ -200,7 +200,7 @@ sky with which the data is associated and the time and frequency ranges that
 were observed or modeled to create the data.  Another important aspect
 is the detailed metadata for tables underlying the resource, including
 names, types, UCDs
-\citep{2005ivoa.spec.1231D}, units,
+\citep{2023ivoa.spec.0125C}, units,
 and textual descriptions for the columns making them up.
 
 Resource records using VODataService types are commonly used to register
@@ -515,7 +515,7 @@ Two further resource classes defined VODataService 1.1,
 are deprecated in version 1.2.
 Resource record authors are requested to migrate or discard resource
 records using these deprecated types.  If all such records have
-disappeared from the VO by version 1.3 of this specification, their
+disappeared from the VO by version 1.4 of this specification, their
 type declarations may be removed from the schema.
 
 \subsubsection{Discovering Data Within Other Services}
@@ -909,7 +909,7 @@ used in new resource records.  Since the XML serialisation of the STC 1
 data model was never promoted to an IVOA recommendation, there also is
 no properly standardised way of creating such records.  Since no such
 records ever existed in the Registry, this type will probably be removed
-from the schema in version 1.3 of this specification.
+from the schema in version 1.4 of this specification.
 
 
 
@@ -2823,6 +2823,8 @@ explain their schema in an IVOA Note.
 \item Adding a \xmlel{productTypeServed} child to \xmlel{DataService};
 this is intended to replace the previous practice of choosing product
 types by service types.
+\item Postponing the drop of StandardSTC and DataCollection to version
+1.4.
 \end{itemize}
 
 \subsection{Changes since PR-20210223}

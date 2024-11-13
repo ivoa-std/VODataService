@@ -7,7 +7,7 @@ DOCNAME = VODataService
 DOCVERSION = 1.3
 
 # Publication date, ISO format; update manually for "releases"
-DOCDATE = 2024-01-12
+DOCDATE = 2024-11-13
 
 # What is it you're writing: NOTE, WD, PR, REC, PEN, or EN
 DOCTYPE = WD
@@ -22,7 +22,7 @@ FIGURES = role_diagram.svg
 
 # List of PDF figures (figures that must be converted to pixel images to
 # work in web browsers).
-VECTORFIGURES = resclasses.tikz.pdf
+VECTORFIGURES = resclasses.tikz.svg
 
 SCHEMA_FILE=VODataService-v1.3.xsd
 
