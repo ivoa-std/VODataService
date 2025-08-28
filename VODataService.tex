@@ -1313,9 +1313,9 @@ follows:
 \label{sect:table}
 
 
-The \xmlel{vs:TableSet} type can be used
-to describe a set of tables that are part of a single resource and can
-be considered functionally all located at a single site.  While there is
+The \xmlel{vs:TableSet} type should be used
+to describe the set of tables that are part of a single resource.
+While there is
 no expectation that the table set directly corresponds to the responses
 of tabular services,
 services should not include metadata for purely internal
@@ -1393,6 +1393,12 @@ resource may provide access to several major astronomical catalogues
 cross-correlations between them.  Each catalogue can be described in a
 separate \xmlel{schema} element, using the elements from
 the \xmlel{vs:TableSchema} type.
+
+The order in which \xmlel{schema} elements are given within a tableset
+is significant.  Publishers should put schemas they consider more
+important or interesting lexically before less salient ones.  For TAP
+services, this order should be consistent with the one implied by
+TAP\_SCHEMA's \verb|schema_index|.
 
 
 % GENERATED: !schemadoc VODataService-v1.3.xsd TableSchema
@@ -1506,6 +1512,10 @@ the \xmlel{vs:TableSchema} type.
 
 Each table in a schema is described in detail using the
 \xmlel{vs:Table} type.
+As with \xmlel{schema}, the order of the \xmlel{table} elements is
+significant, with more salient tables listed further up within a schema
+element.  For TAP services, this order should be consistent with the one
+implied by TAP\_SCHEMA's \verb|table_index|.
 
 
 
@@ -2825,6 +2835,8 @@ this is intended to replace the previous practice of choosing product
 types by service types.
 \item Postponing the drop of StandardSTC and DataCollection to version
 1.4.
+\item Clarifying that the order of schema and table elements in a
+tableset is significant.
 \end{itemize}
 
 \subsection{Changes since PR-20210223}
