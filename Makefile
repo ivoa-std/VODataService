@@ -7,7 +7,7 @@ DOCNAME = VODataService
 DOCVERSION = 1.3
 
 # Publication date, ISO format; update manually for "releases"
-DOCDATE = 2024-01-12
+DOCDATE = 2024-11-13
 
 # What is it you're writing: NOTE, WD, PR, REC, PEN, or EN
 DOCTYPE = WD
@@ -22,21 +22,18 @@ FIGURES = role_diagram.svg
 
 # List of PDF figures (figures that must be converted to pixel images to
 # work in web browsers).
-VECTORFIGURES = resclasses.pdf
+VECTORFIGURES = resclasses.tikz.svg
+
+SCHEMA_FILE=VODataService-v1.3.xsd
 
 # Additional files to distribute (e.g., CSS, schema files, examples...)
-AUX_FILES = VODataService-v1.2.xsd
+AUX_FILES = $(SCHEMA_FILE)
 
 AUTHOR_EMAIL=msdemlei@ari.uni-heidelberg.de
 
-%.pdf: %.psfig
-	ps2pdf -dEPSCrop $*.psfig $*.pdf
 
-%.psfig: %.texfig
-	tex $<
-	dvips $*
-	ps2epsi $*.ps $*.psfig
-	rm $*.ps
+%.pdf: %.texfig
+	pdflatex $<
 
 -include ivoatex/Makefile
 
@@ -45,5 +42,10 @@ ivoatex/Makefile:
 	@echo
 	git submodule update --init
 
+STILTS ?= stilts
+
 test:
-	@echo "No tests defined yet"
+	@$(STILTS) xsdvalidate $(SCHEMA_FILE)
+	@$(STILTS) xsdvalidate \
+		schemaloc="http://www.ivoa.net/xml/VODataService/v1.1=$(SCHEMA_FILE)" \
+		ipac-resource.xml
