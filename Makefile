@@ -43,9 +43,11 @@ ivoatex/Makefile:
 	git submodule update --init
 
 STILTS ?= stilts
+SCHEMA_FILE=VODataService-v1.3.xsd
 
 test:
+	sh test-assertions.sh
 	@$(STILTS) xsdvalidate $(SCHEMA_FILE)
-	@$(STILTS) xsdvalidate \
-		schemaloc="http://www.ivoa.net/xml/VODataService/v1.1=$(SCHEMA_FILE)" \
-		ipac-resource.xml
+	@$(STILTS) xsdvalidate $(SCHEMA_FILE)
+	@ls samples/*.xml | xargs -n1 $(STILTS) xsdvalidate \
+		schemaloc="http://www.ivoa.net/xml/VODataService/v1.1=$(SCHEMA_FILE)"
