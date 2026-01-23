@@ -6,7 +6,7 @@
            xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd"
            xmlns:vm="http://www.ivoa.net/xml/VOMetadata/v0.1"
            elementFormDefault="unqualified" attributeFormDefault="unqualified"
-           version="1.3-wd1">
+           version="1.3-wd2">
 
    <xs:annotation>
       <xs:appinfo>
@@ -835,6 +835,115 @@
       <xs:anyAttribute namespace="##other" />
    </xs:complexType>
 
+   <xs:complexType name="TokenWithFrequency">
+      <xs:annotation>
+         <xs:documentation>
+         An element of a discrete distribution within vs:Stats.
+         </xs:documentation>
+         <xs:documentation>
+         This is a pair of an xs:token – where values are not naturally
+         strings, use XSD literals – and its relative frequency.  For
+         table columns, this would be the number of occurrences divided
+         by the number of rows in the table.  Note that this means that missing
+         values (“NULL”) count into the distribution.
+         </xs:documentation>
+      </xs:annotation>
+
+      <xs:simpleContent>
+         <xs:extension base="xs:token">
+            <xs:attribute name="freq" type="xs:float">
+               <xs:annotation>
+                  <xs:documentation>
+                  The relative frequency of this value, defined as
+                  the number of occurrences divided by the number
+                  of rows.
+                  </xs:documentation>
+               </xs:annotation>
+            </xs:attribute>
+         </xs:extension>
+      </xs:simpleContent>
+   </xs:complexType>
+
+   <xs:complexType name="Stats">
+      <xs:annotation>
+         <xs:documentation>
+         Characterization of a distribution underlying a parameter.
+         </xs:documentation>
+         <xs:documentation>
+         Quasicontinuous distributions are defined here by their minimum
+         and maximum values (which are useful in UI generation, for instance),
+         and the more robust 3rd and 97th percentiles (a “2σ range”) as well
+         as the median for indications on the rough shape of the distribution.
+         The element also admits arbitrary non-namespace child elements
+         to enable the communication of further, more refined statistics.
+         Discrete distributions can be characterized using option elements.
+         </xs:documentation>
+      </xs:annotation>
+
+      <xs:sequence>
+         <xs:element name="min" type="xs:double" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>
+               The smallest value occurring in a distribution of numbers.
+               </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+
+         <xs:element name="percentile03" type="xs:double" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>
+               The 3rd percentile (“2σ”) in a distribution of numbers.
+               </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+
+         <xs:element name="median" type="xs:double" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>
+               The 50th percentile in a distribution of numbers.
+               </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+
+         <xs:element name="percentile97" type="xs:double" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>
+               The 97nd percentile (“2σ”) in a distribution of numbers.
+               </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+
+         <xs:element name="max" type="xs:double" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>
+               The largest value occurring in a distribution of numbers.
+               </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+
+         <xs:element name="fillFactor" type="xs:float" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>
+               The ratio of not-NULL values to the total number of entries
+               in a table column representing the distribution (or similar).
+               </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+
+         <xs:element name="option" type="vs:TokenWithFrequency"
+               minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+               <xs:documentation>
+               An entry in a discrete distribution.
+               </xs:documentation>
+            </xs:annotation>
+         </xs:element>
+
+         <xs:any namespace="##other" processContents="lax"
+            minOccurs="0" maxOccurs="unbounded"/>
+       </xs:sequence>
+   </xs:complexType>
+
    <xs:complexType name="BaseParam">
       <xs:annotation>
          <xs:documentation>
@@ -902,9 +1011,27 @@
             </xs:annotation>
          </xs:element>
 
+         <xs:element name="stats" type="vs:Stats" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>
+                  Statistics of the distribution underlying this parameter.
+               </xs:documentation>
+               <xs:documentation>
+                  What “underlying distribution” means depends on the
+                  semantics of the derived type.  For vs:TableParam-s, for
+                  instance, it would be the distribution of the values in
+                  the corresponding table columns.  With vs:InputParam-s
+                  that are directly translated into relational constraints,
+                  it would similarly be the distribution of the corresponding
+                  column.  For more complex input parameters, the
+                  distribution of an associated physical quantity might also
+                  be appropriate.
+               </xs:documentation>
+            </xs:annotation>
+         </xs:element>
       </xs:sequence>
 
-      <xs:anyAttribute namespace="##other" />
+      <xs:anyAttribute namespace="##other"/>
    </xs:complexType>
 
    <xs:complexType name="TableParam">
@@ -1475,5 +1602,6 @@
          <xs:pattern value="[+-]?([0-9]+\.?[0-9]*|\.[0-9]+)([eE][+-]?[0-9]+)? [+-]?([0-9]+\.?[0-9]*|\.[0-9]+)([eE][+-]?[0-9]+)?"/>
       </xs:restriction>
    </xs:simpleType>
-
 </xs:schema>
+<!-- vim: et:sw=3:ts=3:sta
+-->
