@@ -845,7 +845,9 @@
          strings, use XSD literals – and its relative frequency.  For
          table columns, this would be the number of occurrences divided
          by the number of rows in the table.  Note that this means that missing
-         values (“NULL”) count into the distribution.
+         values (“NULL”) count into the distribution.  As in VOTables,
+         an empty value will mean NULL; these cannot be distinguished
+         from empty strings.
          </xs:documentation>
       </xs:annotation>
 
