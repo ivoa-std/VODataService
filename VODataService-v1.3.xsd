@@ -847,7 +847,8 @@
          by the number of rows in the table.  Note that this means that missing
          values (“NULL”) count into the distribution.  As in VOTables,
          an empty value will mean NULL; these cannot be distinguished
-         from empty strings.
+         from empty strings.  Missing freq attributes should be avoided
+         in TableParam-s.  In InputParam-s they are less important.
          </xs:documentation>
       </xs:annotation>
 
