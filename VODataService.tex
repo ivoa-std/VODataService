@@ -2202,7 +2202,7 @@ represented in a table column or accepted by an input parameter.  Given
 the use case, at least the quantiles and the relative frequencies on
 options do not need to be exact but can be estimates.  For the minimum
 and maximum values, operators have to be aware that UIs may use these
-values in indicate ranges of valid inputs to users.
+values to indicate ranges of valid inputs to users.
 
 In
 particular where such elements are used within VOSI capability or tables
@@ -2339,13 +2339,14 @@ combination of a string and a relative frequency:
 
 \noindent{\small
          This is a pair of an xs:token – where values are not naturally
-         strings, use XSD literals – and its relative frequency.  For
+         strings, use DALI or XSD literals – and its relative frequency.  For
          table columns, this would be the number of occurrences divided
          by the number of rows in the table.  Note that this means that missing
          values (“NULL”) count into the distribution.  As in VOTables,
          an empty value will mean NULL; these cannot be distinguished
-         from empty strings.  Missing freq attributes should be avoided
-         in TableParam-s.  In InputParam-s they are less important.
+         from empty strings.  It is not mandatory to give freq in option
+         elements, which is convenient for InputParam-s or when statistics
+         on the distribution are not available.
          \par}
 
 \vspace{1ex}\noindent\textbf{\xmlel{vs:TokenWithFrequency} Type Schema Definition}

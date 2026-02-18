@@ -842,13 +842,14 @@
          </xs:documentation>
          <xs:documentation>
          This is a pair of an xs:token – where values are not naturally
-         strings, use XSD literals – and its relative frequency.  For
+         strings, use DALI or XSD literals – and its relative frequency.  For
          table columns, this would be the number of occurrences divided
          by the number of rows in the table.  Note that this means that missing
          values (“NULL”) count into the distribution.  As in VOTables,
          an empty value will mean NULL; these cannot be distinguished
-         from empty strings.  Missing freq attributes should be avoided
-         in TableParam-s.  In InputParam-s they are less important.
+         from empty strings.  It is not mandatory to give freq in option
+         elements, which is convenient for InputParam-s or when statistics
+         on the distribution are not available.
          </xs:documentation>
       </xs:annotation>
 
