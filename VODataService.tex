@@ -23,6 +23,8 @@
   TAP\discretionary{-}{}{\kern-2pt\_}UPLOAD}
 \fi
 
+\DeclareUnicodeCharacter{03C3}{$\sigma$}
+
 \title{VODataService: A VOResource Schema Extension for Describing
 Collections and Services}
 
@@ -277,7 +279,7 @@ However, the plain table size often is a useful proxy in such discovery
 problems.  The new \xmlel{nrows} child of \xmlel{vs:Table} communicates
 it.
 
-\subsection{Additional Use Case for Version 1.3}
+\subsection{Additional Use Cases for Version 1.3}
 
 \paragraph{Find services serving time series.} In the previous registry
 model, searches for a certain kind of data product were linked to
@@ -291,28 +293,36 @@ available, its adoption by VODataService was natural.  It is now used
 to let data collections and services explicitly declare which sort of
 data they contain or serve.
 
-\subsection{Additional Use Cases for Future Versions}
-
-The following use cases were originally envisioned for VODataService
-1.2, but were postponed because building multiply implemented solutions
-for them seemed likely to unnecessarily delay the standardisation of, in
-particular, the STC part of the present document.  They will likely be
-addressed by future versions of VODataService.
-
 \paragraph{Find a resource that has sources in M51 down to 27 mag in V.}
-The constraint about finding a resource that has V magnitudes for M51 is
+The part about finding a resource that has any V magnitudes and covers M51 is
 expressible using spatial coverage and the column's UCDs.  To express
-something like ``down to $27^{\rm m}$'' one would at least need
-VOTable-style \xmlel{VALUES} children for columns; however, metadata
-sufficient to address the next use case would certainly be sufficient
-here as well.
+something like ``down to $27^{\rm m}$'', VODataService 1.3 provides
+what can be considered $2\sigma$-limits of column contents in the
+\xmlel{stats} child of \xmlel{vs:BaseParam}.
 
 \paragraph{Plan a cross-service query.} Systems like OGSA-DAI
 \citep{2011ASPC..442..579H} perform orchestration of SQL-like queries
 between multiple services automatically, in particular cross-service
-JOINs.  In order to work efficiently, such services need column
-statistics like histograms and the percentage of NULL values.
+JOINs.  In order for these to work efficiently, they at least need some
+basic idea about the distribution of the values (and NULLs) in the
+columns used in constraints.  Again, the \xmlel{stats} element tries to
+provide just enough information.
 
+\paragraph{UI Induction.} VODataService's \xmlel{vs:ParamHTTP} type has
+always provided enough information to build an extremely simple UI with
+input fields and descriptions for them.  However, these UIs were
+generally unusable since no indication could be provided as to what
+could sensibly be entered into these fields.  With \xmlel{stat} on
+\xmlel{vs:InputParam}, such UIs can now provide drop-down menus for
+enumerated parameters and placeholders or even sliders for continuous
+parameters.
+
+\subsection{Additional Use Cases for Future Versions}
+
+The following use cases were at some point planned for future VODataService
+versions but were postponed because there was insufficient community
+support for proposed solutions.  They are recorded here in order to
+remind interested parties of lacunae already identified.
 
 \paragraph{Facilitate discovery of full DALI services.}  The issue here
 is that DALI forsees synchronous and asynchronous endpoints as the
@@ -734,7 +744,7 @@ element.
 	              		failing to define their product type(s) may be skipped
 	              		by clients in global discovery.  Product type names must
 	              		be taken from the IVOA vocabulary
-	              		http://www.ivoa.net/rdf/product-type.
+	              		\url{http://www.ivoa.net/rdf/product-type}.
 	              	
 \item[Occurrence] optional; multiple occurrences allowed.
 
@@ -1124,7 +1134,7 @@ This element is imported from another schema.  See
                   A name of a messenger that the resource is relevant for
                   (e.g., was used in the measurements).  Terms must
                   be taken from the vocabulary at
-                  http://www.ivoa.net/rdf/messenger.
+                  \url{http://www.ivoa.net/rdf/messenger}.
 
 \item[Occurrence] optional; multiple occurrences allowed.
 \item[Comment]
@@ -2091,6 +2101,7 @@ metadata except the data type.
     <xs:element name="unit" type="xs:token" minOccurs="0" />
     <xs:element name="ucd" type="xs:token" minOccurs="0" />
     <xs:element name="utype" type="xs:token" minOccurs="0" />
+    <xs:element name="stats" type="vs:Stats" minOccurs="0" />
   </xs:sequence>
   <xs:anyAttribute namespace="##other" />
 </xs:complexType>
@@ -2156,6 +2167,26 @@ metadata except the data type.
 
 
 \end{description}
+\item[Element \xmlel{stats}]
+\begin{description}
+\item[Type] composite: \xmlel{vs:Stats}
+\item[Meaning]
+                  Statistics of the distribution underlying this parameter.
+
+\item[Occurrence] optional
+\item[Comment]
+                  What “underlying distribution” means depends on the
+                  semantics of the derived type.  For vs:TableParam-s, for
+                  instance, it would be the distribution of the values in
+                  the corresponding table columns.  With vs:InputParam-s
+                  that are directly translated into relational constraints,
+                  it would similarly be the distribution of the corresponding
+                  column.  For more complex input parameters, the
+                  distribution of an associated physical quantity might also
+                  be appropriate.
+
+
+\end{description}
 
 
 \end{bigdescription}\endgroup
@@ -2164,6 +2195,200 @@ metadata except the data type.
 \end{generated}
 
 % /GENERATED
+
+The \xmlel{vs:Stats} type tries to encompass enough statistics to allow
+users to form a useful idea of the distribution of the values
+represented in a table column or accepted by an input parameter.  Given
+the use case, at least the quantiles and the relative frequencies on
+options do not need to be exact but can be estimates.  For the minimum
+and maximum values, operators have to be aware that UIs may use these
+values to indicate ranges of valid inputs to users.
+
+In
+particular where such elements are used within VOSI capability or tables
+endpoints, data providers may wish to include additional statistics.
+For this purpose, \xmlel{vs:Stats} admits arbitrary children from other
+namespaces.
+
+% GENERATED: !schemadoc VODataService-v1.3.xsd Stats
+\begin{generated}
+\begingroup
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:Stats} Type Schema Documentation}
+
+\noindent{\small
+         Characterization of a distribution underlying a parameter.
+         \par}
+
+\noindent{\small
+         Quasicontinuous distributions are defined here by their minimum
+         and maximum values (which are useful in UI generation, for instance),
+         and the more robust 3rd and 97th percentiles (a “2σ range”) as well
+         as the median for indications on the rough shape of the distribution.
+         The element also admits arbitrary non-namespace child elements
+         to enable the communication of further, more refined statistics.
+         Discrete distributions can be characterized using option elements.
+         \par}
+
+\vspace{1ex}\noindent\textbf{\xmlel{vs:Stats} Type Schema Definition}
+
+\begin{lstlisting}[language=XML,basicstyle=\footnotesize]
+<xs:complexType name="Stats" >
+  <xs:sequence >
+    <xs:element name="min" type="xs:double" minOccurs="0" />
+    <xs:element name="percentile03" type="xs:double" minOccurs="0" />
+    <xs:element name="median" type="xs:double" minOccurs="0" />
+    <xs:element name="percentile97" type="xs:double" minOccurs="0" />
+    <xs:element name="max" type="xs:double" minOccurs="0" />
+    <xs:element name="fillFactor" type="xs:float" minOccurs="0" />
+    <xs:element name="option" type="vs:TokenWithFrequency" minOccurs="0"
+              maxOccurs="unbounded" />
+    <xs:any namespace="##other" processContents="lax" minOccurs="0"
+          maxOccurs="unbounded" />
+  </xs:sequence>
+</xs:complexType>
+\end{lstlisting}
+
+\vspace{0.5ex}\noindent\textbf{\xmlel{vs:Stats} Metadata Elements}
+
+\begingroup\small\begin{bigdescription}\item[Element \xmlel{min}]
+\begin{description}
+\item[Type] floating-point number: \xmlel{xs:double}
+\item[Meaning]
+               The smallest value occurring in a distribution of numbers.
+
+\item[Occurrence] optional
+
+\end{description}
+\item[Element \xmlel{percentile03}]
+\begin{description}
+\item[Type] floating-point number: \xmlel{xs:double}
+\item[Meaning]
+               The 3rd percentile (“2σ”) in a distribution of numbers.
+
+\item[Occurrence] optional
+
+\end{description}
+\item[Element \xmlel{median}]
+\begin{description}
+\item[Type] floating-point number: \xmlel{xs:double}
+\item[Meaning]
+               The 50th percentile in a distribution of numbers.
+
+\item[Occurrence] optional
+
+\end{description}
+\item[Element \xmlel{percentile97}]
+\begin{description}
+\item[Type] floating-point number: \xmlel{xs:double}
+\item[Meaning]
+               The 97nd percentile (“2σ”) in a distribution of numbers.
+
+\item[Occurrence] optional
+
+\end{description}
+\item[Element \xmlel{max}]
+\begin{description}
+\item[Type] floating-point number: \xmlel{xs:double}
+\item[Meaning]
+               The largest value occurring in a distribution of numbers.
+
+\item[Occurrence] optional
+
+\end{description}
+\item[Element \xmlel{fillFactor}]
+\begin{description}
+\item[Type] floating-point number: \xmlel{xs:float}
+\item[Meaning]
+               The ratio of not-NULL values to the total number of entries
+               in a table column representing the distribution (or similar).
+
+\item[Occurrence] optional
+
+\end{description}
+\item[Element \xmlel{option}]
+\begin{description}
+\item[Type] a string with optional attributes
+\item[Meaning]
+               An entry in a discrete distribution.
+
+\item[Occurrence] optional; multiple occurrences allowed.
+
+\end{description}
+
+
+\end{bigdescription}\endgroup
+
+\endgroup
+\end{generated}
+
+% /GENERATED
+
+The \xmlel{option} element used to describe discrete distributions is a
+combination of a string and a relative frequency:
+
+% GENERATED: !schemadoc VODataService-v1.3.xsd TokenWithFrequency
+\begin{generated}
+\begingroup
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:TokenWithFrequency} Type Schema Documentation}
+
+\noindent{\small
+         An element of a discrete distribution within vs:Stats.
+         \par}
+
+\noindent{\small
+         This is a pair of an xs:token – where values are not naturally
+         strings, use DALI or XSD literals – and its relative frequency.  For
+         table columns, this would be the number of occurrences divided
+         by the number of rows in the table.  Note that this means that missing
+         values (“NULL”) count into the distribution.  As in VOTables,
+         an empty value will mean NULL; these cannot be distinguished
+         from empty strings.  It is not mandatory to give freq in option
+         elements, which is convenient for InputParam-s or when statistics
+         on the distribution are not available.
+         \par}
+
+\vspace{1ex}\noindent\textbf{\xmlel{vs:TokenWithFrequency} Type Schema Definition}
+
+\begin{lstlisting}[language=XML,basicstyle=\footnotesize]
+<xs:complexType name="TokenWithFrequency" >
+  <xs:simpleContent >
+    <xs:extension base="xs:token" >
+      <xs:attribute name="freq" type="xs:float" />
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+\end{lstlisting}
+
+\vspace{0.5ex}\noindent\textbf{\xmlel{vs:TokenWithFrequency} Attributes}
+
+\begingroup\small\begin{bigdescription}
+\item[freq]
+\begin{description}
+\item[Type] floating-point number: \xmlel{xs:float}
+\item[Meaning]
+                  The relative frequency of this value, defined as
+                  the number of occurrences divided by the number
+                  of rows.
+
+\item[Occurrence] optional
+\end{description}
+
+
+\end{bigdescription}\endgroup
+
+\endgroup
+\end{generated}
+
+% /GENERATED
+
+While local usage for VOSI tables could conceivably have long lists of
+options, data providers are discouraged from publishing discrete
+distributions with more than a few dozen elements to the
+registry.  Indeed, outside of a few bespoke columns (e.g., obscore's
+\verb|dataproduct_type|), defining discrete statistics in Registry-bound
+tablesets is probably not overly useful.
 
 Leaving the data type metadatum out of \xmlel{vs:BaseParam}
 allows the different kinds of parameters derived from

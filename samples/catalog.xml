@@ -66,9 +66,10 @@
   <tableset>
     <schema>
       <name>default</name>
-      <table nrows="1012">
+      <table>
         <name>"I/134/data"</name>
         <description>The Catalogue of Trapezium Multiple Systems</description>
+        <nrows>1012</nrows>
         <column>
           <name>Seq</name>
           <description>Ordinal number</description>
@@ -118,6 +119,14 @@
           <description>? Magnitude of the main star (1)</description>
           <unit>mag</unit>
           <ucd>phot.mag</ucd>
+          <stats>
+            <min>2.2</min>
+            <percentile03>2.8</percentile03>
+            <median>9.25</median>
+            <percentile97>11.5</percentile97>
+            <max>11.7</max>
+            <fillFactor>0.405</fillFactor>
+          </stats>
           <dataType xsi:type="vs:VOTableType">float</dataType>
         </column>
         <column>
@@ -131,6 +140,13 @@
           <name>Sp1</name>
           <description>IDS Spectral class of the main star (1)</description>
           <ucd>src.spType</ucd>
+          <stats>
+          	<option freq="0.74"></option>
+          	<option freq="0.02767">A0</option>
+          	<option freq="0.0247">K0</option>
+          	<option freq="0.01877">B9</option>
+          	<option freq="0.01779">F5</option>
+          </stats>
           <dataType xsi:type="vs:VOTableType" arraysize="3*">char</dataType>
         </column>
         <column>
