@@ -45,6 +45,7 @@ Collections and Services}
 \editor{Markus Demleitner}
 \editor{Ray Plante}
 
+\previousversion[https://www.ivoa.net/documents/VODataService/20241113]{WD-1.3-20241113}
 \previousversion[https://www.ivoa.net/documents/VODataService/20211102]{REC-1.2}
 \previousversion[https://ivoa.net/documents/VODataService/20190715/PR-VODataService-1.2-20210223.html]{PR-2021-02-23}
 \previousversion[https://ivoa.net/documents/VODataService/20190715/PR-VODataService-1.2-20190715.html]{PR-2019-07-15}
@@ -644,16 +645,16 @@ systematics of the following resource types.
 \subsubsection{DataResource}
 \label{sect:DataResource}
 
-The \xmlel{vs:DataResource} resource type is used to describe a
-resource containing generic astronomical data without a dominating
-tabular structure.  An example might be a largely unstructured archive
+The \xmlel{vs:DataResource} resource base type can be used to describe a
+resource containing generic astronomical data.
+An example might be a largely unstructured archive
 of various observations.  Resources that have structured metadata tables
 (like most VO services) or are tabular in nature (like usual
-astronomical catalogues) should use \xmlel{vs:CatalogResource}.
+astronomical catalogues) should use the derived type \xmlel{vs:CatalogResource}.
 
-The type is derived from \xmlel{vr:Service}, which means that instances
-can have
-capabilities.  For \xmlel{vs:DataResource}, only auxiliary capabilities
+\xmlel{DataResource} is derived from \xmlel{vr:Service}, which means
+that instances can have
+capabilities.  For plain \xmlel{vs:DataResource}, only auxiliary capabilities
 (e.g., DataServices serving multiple DataResources) or plain capabilities
 with \xmlel{vr:WebBrowser} interfaces should be given.  Resources with a
 primary access mode dedicated to the resource's data content should use
@@ -664,6 +665,67 @@ elements for declaring the observing facilities and/or instruments used
 to obtain the data, and it supports the declaration of
 the physical coverage of data via the \xmlel{coverage}
 element.
+
+In addition, two metadata elements giving tokens from controlled
+vocabularies are introduced by DataResource.  With
+\xmlel{productTypeServed}, resources say which data product types (if
+any) they serve.  This is intended to replace the practice of doing data
+discovery based on service types (e.g., ``search all SIAP services if
+you are looking for images'') that was dominant in the VO from its
+beginnings and became inappropriate as TAP-published Obscore tables
+\citep{2017ivoa.spec.0509L} came into widespread use.
+
+While a flat list is not an adequate presentation for this fairly
+hierarchical vocabulary, here is the list of terms contained in
+\url{http://www.ivoa.net/rdf/product-type} at the time of writing:
+
+% GENERATED: !vocterms product-type
+\textsl{cube},
+\textsl{dynamic-spectrum},
+\textsl{event-list},
+\textsl{image},
+\textsl{light-curve},
+\textsl{measurements},
+\textsl{polarization-cube},
+\textsl{polarization-resolved-dataset},
+\textsl{polarized-spectrum},
+\textsl{sed},
+\textsl{slit-spectrum},
+\textsl{spatial-profile},
+\textsl{spatially-resolved-dataset},
+\textsl{spectral-cube},
+\textsl{spectrally-resolved-dataset},
+\textsl{spectrum},
+\textsl{temporally-resolved-dataset},
+\textsl{time-cube},
+\textsl{timeseries},
+\textsl{velocity-curve},
+\textsl{visibility}
+% /GENERATED
+
+See \citet{2023ivoa.spec.0206D} for how to use IVOA vocabularies more
+appropriately.
+
+In the other vocabulary-controlled element, \xmlel{dataSource},
+publishers can declare whether the data published was the result of an
+observation or of some theoretical work.  The central purpose here is to
+enable filtering out data not actually matching any physical object up
+front.  At this point, the controlled vocabulary
+\url{http://www.ivoa.net/rdf/data-source} contains these terms:
+
+% GENERATED: !vocterms data-source
+\textsl{observation},
+\textsl{theory},
+\textsl{artificial}
+% /GENERATED
+
+Following previous VO practice, resources giving no data source can be
+assumed to publish data resulting from observations.
+
+Consumers should not rely on the term lists given here but retrieve the
+latest version of the pertinent vocabularies and exploit their semantic
+relationships (e.g., expanding to narrower terms when comparing for
+equality) when sensible.
 
 % GENERATED: !schemadoc VODataService-v1.3.xsd DataResource
 \begin{generated}
@@ -694,6 +756,8 @@ element.
                   maxOccurs="unbounded" />
         <xs:element name="coverage" type="vs:Coverage" minOccurs="0" />
         <xs:element name="productTypeServed" type="xs:token" minOccurs="0"
+                  maxOccurs="unbounded" />
+        <xs:element name="dataSource" type="xs:token" minOccurs="0"
                   maxOccurs="unbounded" />
       </xs:sequence>
     </xs:extension>
@@ -739,14 +803,35 @@ element.
 \item[Meaning]
 	              		Collections of data products (e.g., images or spectra)
 	              		or services serving them define the type of products
-	              		they contain or serve here.  This information is intended
-	              		to enable global product discovery.  Hence, services
-	              		failing to define their product type(s) may be skipped
-	              		by clients in global discovery.  Product type names must
+	              		they contain or serve here.  The strings here must
 	              		be taken from the IVOA vocabulary
+	              		\url{http://www.ivoa.net/rdf/product-type}.
+
+\item[Occurrence] optional; multiple occurrences allowed.
+\item[Comment]
+	              	   This information is intended
+	              		to enable global product discovery.  Hence, services
+	              		failing to define their product type(s) risk being skipped
+	              		by clients doing typed global dataset discovery.
+	              	
+
+\end{description}
+\item[Element \xmlel{dataSource}]
+\begin{description}
+\item[Type] string: \xmlel{xs:token}
+\item[Meaning]
+	              		The process that produced the data reported here,
+	              		taken from the IVOA vocabulary
 	              		\url{http://www.ivoa.net/rdf/product-type}.
 	              	
 \item[Occurrence] optional; multiple occurrences allowed.
+\item[Comment]
+	              	   If nothing is given here, consumers should assume
+	              	   'observation' as the data source.  Also, clients
+	              	   should note that more refined terms can be introduced
+	              	   at any time and should follow semantic relations
+	              	   given in the vocabulary if appropriate.
+	              	
 
 \end{description}
 
@@ -3051,6 +3136,16 @@ explain their schema in an IVOA Note.
 \appendix
 
 \section{Changes from previous versions}
+
+
+\subsection{Changes since WD-1.3-20241113}
+
+\begin{itemize}
+\item Adding a \xmlel{stats} child to \xmlel{BaseParam} to declare
+basic column statistics.
+\item Adding a \xmlel{dataSource} child to \xmlel{DataService} in order
+to distinguish observed and theoretical data.
+\end{itemize}
 
 \subsection{Changes since REC-1.2}
 
