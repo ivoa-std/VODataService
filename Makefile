@@ -7,7 +7,7 @@ DOCNAME = VODataService
 DOCVERSION = 1.3
 
 # Publication date, ISO format; update manually for "releases"
-DOCDATE = 2024-11-13
+DOCDATE = 2026-03-24
 
 # What is it you're writing: NOTE, WD, PR, REC, PEN, or EN
 DOCTYPE = WD
