@@ -14,6 +14,9 @@ gitmeta.tex
 *.swp
 role_diagram.svg
 resclasses.png
+*.tikz.png
+*.tikz.svg
+MANIFEST
 
 # OS-specific
 .DS_Store
