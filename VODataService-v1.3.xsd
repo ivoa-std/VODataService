@@ -1084,7 +1084,7 @@
                      <xs:documentation>
                         A keyword representing traits of the column.
                         Recognized values include “indexed”, “primary”,
-                        “nullable”, and “generated”.
+                        “nullable”, and “no-where”.
                      </xs:documentation>
                      <xs:documentation>
                      	While other values are allowed, the following semantics
@@ -1092,9 +1092,11 @@
                      	has an index on it for faster search against its values;
                      	primary – The values column in the column represent in
                      	total or in part a primary key for its table; nullable –
-                     	the column may contain null or empty values; generated
-                     	– the content of this column is select-clause only in
-                     	ADQL (i.e., it cannot be used in constraints).
+                     	the column may contain null or empty values;
+                     	no-where – one cannot (simply) use this column in
+                     	ADQL WHERE clauses or similar places, for instance
+                     	because it is generated outside of a database or
+                     	because no operators exist for the column type.
                      </xs:documentation>
                   </xs:annotation>
                </xs:element>
