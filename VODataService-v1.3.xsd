@@ -166,7 +166,7 @@
                      ICRS must be used.
                   </xs:documentation>
                   <xs:documentation>
-                     VODataService 1.2 does not prescribe a vocabulary for
+                     VODataService 1.3 does not prescribe a vocabulary for
                      what values are allowed here.  As
                      long as no such vocabulary is agreed upon, the frame
                      attribute should not be set.
@@ -1439,7 +1439,7 @@
       <xs:annotation>
          <xs:documentation>
             A data type supported explicitly by the Table Access
-            Protocol (v1.0).  This is deprecated in VODataService 1.2,
+            Protocol (v1.0).  This is deprecated since VODataService 1.2,
             and even TAP 1.0 services are encouraged to declare
             their columns using VOTableType.
          </xs:documentation>
