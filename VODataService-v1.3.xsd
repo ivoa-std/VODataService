@@ -933,7 +933,7 @@
          <xs:element name="percentile97" type="xs:double" minOccurs="0">
             <xs:annotation>
                <xs:documentation>
-               The 97nd percentile (“2σ”) in a distribution of numbers.
+               The 97th percentile (“2σ”) in a distribution of numbers.
                </xs:documentation>
             </xs:annotation>
          </xs:element>
@@ -1107,7 +1107,7 @@
                   <xs:documentation>
                      If true, the meaning and use of this parameter is
                      reserved and defined by a standard model.  If false,
-                     it represents a parameter specific to the data described
+                     it represents a parameter specific to the data described.
                      If not provided, then the value is unknown.
                   </xs:documentation>
                </xs:annotation>
