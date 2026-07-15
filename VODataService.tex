@@ -193,6 +193,8 @@ user interface to what is specified here.  RegTAP will need an update
 to support the space-time constraints added here.
 \item[MOC, v2.0 \citep{2022ivoa.spec.0727F}] Multi-Order coverage maps
 are used by VODataService to communicate spatial coverage.
+\item[VOUnits, v1.1 \citep{2023ivoa.spec.1215G}] Tablesets should use
+VOUnits syntax.
 \end{description}
 
 \subsection{Purpose}
@@ -758,9 +760,9 @@ front.  At this point, the controlled vocabulary
 \url{http://www.ivoa.net/rdf/data-source} contains these terms:
 
 % GENERATED: !vocterms data-source
-\textsl{artificial},
-\textsl{observation},
-\textsl{theory}
+\textsl{abstract-model},
+\textsl{concrete-model},
+\textsl{observation}
 % /GENERATED
 
 Following previous VO practice, resources giving no data source can be
@@ -2101,7 +2103,7 @@ metadata except the data type.
 \begin{description}
 \item[Type] string: \xmlel{xs:token}
 \item[Meaning] The unit associated with the values in the parameter
-                  or column.
+                  or column.  This should use VOUnits syntax.
 \item[Occurrence] optional
 
 \end{description}
@@ -2226,7 +2228,7 @@ namespaces.
 \item[Element \xmlel{percentile97}]
 \begin{description}
 \item[Type] floating-point number: \xmlel{xs:double}
-\item[Meaning] The 97nd percentile (“2σ”) in a distribution of numbers.
+\item[Meaning] The 97th percentile (“2σ”) in a distribution of numbers.
 \item[Occurrence] optional
 
 \end{description}
@@ -2730,7 +2732,7 @@ a table.
 \item[Type] boolean (true/false): xs:boolean
 \item[Meaning] If true, the meaning and use of this parameter is
                      reserved and defined by a standard model.  If false,
-                     it represents a parameter specific to the data described
+                     it represents a parameter specific to the data described.
                      If not provided, then the value is unknown.
 \item[Occurrence] optional
 \end{description}
@@ -2786,6 +2788,12 @@ element MUST include an
 \xmlel{xsi:type} attribute.  As discussed in
 sect.~\ref{sect:tbldatatypes}, this SHOULD be
 \xmlel{vs:VOTableType} for VODataService 1.3 table columns.
+
+Units specified for columns and params SHOULD follow the VOUnits grammar
+\citep{2023ivoa.spec.1215G}, which is particularly important for clients
+obtaining them from VOSI tables endpoint with the intent of using them
+for automatic unit conversions.  New implementors should consider
+VOUnits compliance a MUST rather than a SHOULD.
 
 When the tableset describes a set of TAP-accessible tables, the value of
 a \xmlel{tableColumn}'s \xmlel{name} child must be in a form immediately

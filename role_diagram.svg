@@ -46,4 +46,5 @@
 	<svg x="550" y="230"><rect height="18" x="0" y="0" width="90" class="rec"/><text class="doclabel" y="12.5" x="45">STC</text></svg>
 	<svg x="540" y="435"><rect height="18" x="0" y="0" width="90" class="rec"/><text class="doclabel" y="12.5" x="45">VOSI</text></svg>
 	<svg x="430" y="400"><rect height="18" x="0" y="0" width="90" class="rec"/><text class="doclabel" y="12.5" x="45">MOC</text></svg>
+  <svg x="220" y="250"><rect height="18" x="0" y="0" width="50" class="rec"/><text class="doclabel" y="12.5" x="25">VOUnits</text></svg>
 </g></svg>

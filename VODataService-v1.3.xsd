@@ -1004,7 +1004,7 @@
             <xs:annotation>
                <xs:documentation>
                   The unit associated with the values in the parameter
-                  or column.
+                  or column.  This should use VOUnits syntax.
                </xs:documentation>
             </xs:annotation>
          </xs:element>
