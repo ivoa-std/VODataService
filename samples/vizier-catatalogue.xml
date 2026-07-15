@@ -1,0 +1,1057 @@
+<ri:Resource
+	xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0"
+	xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
+	xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1"
+	xmlns:cs="http://www.ivoa.net/xml/ConeSearch/v1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ivoa.net/xml/ConeSearch/v1.0 http://www.ivoa.net/xml/ConeSearch/v1.0"
+	xsi:type="vs:CatalogService"
+	created="2018-04-11T12:15:26Z"
+	updated="2025-05-19T09:50:00Z"
+	status="active">
+    <title>z&lt;1 3CR radio galaxies and quasars star formation</title><shortName>J/AJ/151/120</shortName><identifier>ivo://CDS.VizieR/J/AJ/151/120</identifier><altIdentifier>doi:10.26093/cds/vizier.51510120</altIdentifier>
+    <curation>
+        <publisher ivo-id="ivo://CDS">CDS</publisher>
+        <creator>
+            <name>Westhues C.</name>
+        </creator>
+        <creator>
+            <name>Haas M.</name>
+        </creator>
+        <creator>
+            <name>Barthel P.</name>
+        </creator>
+        <creator>
+            <name>Wilkes B.J.</name>
+        </creator>
+        <creator>
+            <name>Willner S.P..</name>
+        </creator>
+        <creator>
+            <name>Podigachoski P.</name>
+        </creator>
+        <creator>
+            <name>Leipski C.</name>
+        </creator>
+        <creator>
+            <name>Meisenheimer K.</name>
+        </creator>
+        <creator>
+            <name>Chini R.</name>
+        </creator>
+        <date role="Updated">2021-12-16T13:37:06Z</date><date role="Created">2018-04-11T12:15:26Z</date>
+        <contact>
+            <name>CDS support team</name><address>CDS, Observatoire de Strasbourg, 11 rue de l'Universite, F-67000 Strasbourg, France</address><email>cds-question@unistra.fr</email>
+        </contact>
+    </curation>
+    <content>
+        <subject>radio-galaxies</subject><subject>quasars</subject><subject>active-galactic-nuclei</subject><subject>spectroscopy</subject><subject>infrared-photometry</subject><subject>spectral-energy-distribution</subject><subject>chemical-abundances</subject><subject>stellar-ages</subject><subject>stellar-masses</subject><description>Using the Herschel Space Observatory we have observed a representative sample of 87 powerful 3CR sources at redshift z&lt;1. The far-infrared (FIR, 70-500 {mu}m) photometry is combined with mid-infrared (MIR) photometry from the Wide-Field Infrared Survey Explorer and cataloged data to analyze the complete spectral energy distributions (SEDs) of each object from optical to radio wavelength. To disentangle the contributions of different components, the SEDs are fitted with a set of templates to derive the luminosities of host galaxy starlight, dust torus emission powered by active galactic nuclei (AGNs), and cool dust heated by stars. The level of emission from relativistic jets is also estimated to isolate the thermal host galaxy contribution. The new data are in line with the orientation-based unification of high-excitation radio-loud AGN, in that the dust torus becomes optically thin longwards of 30 {mu}m. The low-excitation radio galaxies and the MIR-weak sources represent an MIR- and FIR-faint AGN population that is different from the high-excitation MIR-bright objects; it remains an open question whether they are at a later evolutionary state or an intrinsically different population. The derived luminosities for host starlight and dust heated by star formation are converted to stellar masses and star-formation rates (SFR). The host-normalized SFR of the bulk of the 3CR sources is low when compared to other galaxy populations at the same epoch. Estimates of the dust mass yield a 1-100 times lower dust/stellar mass ratio than for the Milky Way, which indicates that these 3CR hosts have very low levels of interstellar matter and explains the low level of star formation. Less than 10% of the 3CR sources show levels of star formation above those of the main sequence of star-forming galaxies.</description><source format="bibcode">2016AJ....151..120W</source><referenceURL>https://cdsarc.cds.unistra.fr/viz-bin/cat/J/AJ/151/120</referenceURL><type>Catalog</type><contentLevel>Research</contentLevel>
+        <relationship>
+            <relationshipType>IsServedBy</relationshipType><relatedResource ivo-id="ivo://CDS.VizieR/TAP">TAP VizieR generic service</relatedResource>
+        </relationship>
+        <relationship>
+            <relationshipType>IsServedBy</relationshipType><relatedResource>Conesearch service</relatedResource>
+        </relationship>
+        <relationship>
+            <relationshipType>related-to</relationshipType><relatedResource ivo-id="ivo://CDS.VizieR/VIII/1">VIII/1 : The 3C and 3CR Catalogues (Edge+ 1959-1962)</relatedResource><relatedResource ivo-id="ivo://CDS.VizieR/VI/139">VI/139 : Herschel Observation Log (Herschel Science Centre, 2013)</relatedResource><relatedResource ivo-id="ivo://CDS.VizieR/J/MNRAS/204/151">J/MNRAS/204/151 : Bright radio sources at 178 MHz (3CRR) (Laing+ 1983)</relatedResource><relatedResource ivo-id="ivo://CDS.VizieR/J/PASP/97/932">J/PASP/97/932 : 3CR Source Identifications (Spinrad+, 1985)</relatedResource><relatedResource ivo-id="ivo://CDS.VizieR/J/A+A/575/A80">J/A+A/575/A80 : FIR photometry of 3CR galaxies (Podigachoski+, 2015)</relatedResource>
+        </relationship>
+    </content>
+    <rights>https://cds.unistra.fr/vizier-org/licences_vizier.html</rights>
+    <capability>
+        <interface xsi:type="vr:WebBrowser">
+            <accessURL use="full">https://vizier.cds.unistra.fr/viz-bin/VizieR-2?-source=J/AJ/151/120</accessURL><mirrorURL title="VizieR at IUCAA: Pune, India">https://vizier.iucaa.in/viz-bin/VizieR-2?-source=J/AJ/151/120</mirrorURL><mirrorURL title="VizieR at SAAO: SAAO, South Africa">http://vizieridia.saao.ac.za/viz-bin/VizieR-2?-source=J/AJ/151/120</mirrorURL>
+        </interface>
+    </capability>
+    <capability>
+        <interface xsi:type="vs:ParamHTTP">
+            <accessURL use="base">https://vizier.cds.unistra.fr/viz-bin/votable?-source=J/AJ/151/120</accessURL><mirrorURL title="VizieR at IUCAA: Pune, India">https://vizier.iucaa.in/viz-bin/votable?-source=J/AJ/151/120</mirrorURL><mirrorURL title="VizieR at SAAO: SAAO, South Africa">http://vizieridia.saao.ac.za/viz-bin/votable?-source=J/AJ/151/120</mirrorURL><queryType>GET</queryType><resultType>text/xml+votable</resultType>
+        </interface>
+    </capability>
+    <capability standardID="ivo://ivoa.net/std/TAP#aux">
+        <interface xsi:type="vs:ParamHTTP" role="std">
+            <accessURL use="base">https://tapvizier.cds.unistra.fr/TAPVizieR/tap</accessURL>
+        </interface>
+    </capability>
+    <capability xsi:type="cs:ConeSearch" standardID="ivo://ivoa.net/std/ConeSearch">
+        <description>Cone search capability for table J/AJ/151/120/table1 (3CR Sources 0.5&lt;z&lt;1 Observed with Herschel)</description>
+        <interface xsi:type="vs:ParamHTTP" role="std">
+            <accessURL use="base">https://vizier.cds.unistra.fr/viz-bin/conesearch/J/AJ/151/120/table1?</accessURL>
+            <mirrorURL title="VizieR at IUCAA: Pune, India">https://vizier.iucaa.in/viz-bin/conesearch/J/AJ/151/120/table1?</mirrorURL>
+            <mirrorURL title="VizieR at SAAO: SAAO, South Africa">http://vizieridia.saao.ac.za/viz-bin/conesearch/J/AJ/151/120/table1?</mirrorURL>
+            <queryType>GET</queryType>
+            <resultType>text/xml+votable</resultType>
+            <!-- a future cone search 2 will have more parameters -->
+            <param>
+                <name>TABLE</name>
+                <stats>
+                    <option>"J/AJ/151/120/table1"</option>
+                </stats>
+            </param>
+        </interface>
+        <maxSR>180.0</maxSR><maxRecords>50000</maxRecords><verbosity>true</verbosity>
+        <testQuery>
+            <ra>4.129583</ra><dec>79.280556</dec><sr>0.005555555555555556</sr>
+        </testQuery>
+    </capability>
+    <capability xsi:type="cs:ConeSearch" standardID="ivo://ivoa.net/std/ConeSearch">
+        <description>Cone search capability for table J/AJ/151/120/table2 (3CR Sources z&lt;0.5 Observed with Herschel)</description>
+        <interface xsi:type="vs:ParamHTTP" role="std">
+            <accessURL use="base">https://vizier.cds.unistra.fr/viz-bin/conesearch/J/AJ/151/120/table2?</accessURL>
+            <mirrorURL title="VizieR at IUCAA: Pune, India">https://vizier.iucaa.in/viz-bin/conesearch/J/AJ/151/120/table2?</mirrorURL>
+            <mirrorURL title="VizieR at SAAO: SAAO, South Africa">http://vizieridia.saao.ac.za/viz-bin/conesearch/J/AJ/151/120/table2?</mirrorURL>
+            <queryType>GET</queryType>
+            <resultType>text/xml+votable</resultType>
+            <param>
+                <name>TABLE</name>
+                <stats>
+                    <option>"J/AJ/151/120/table2"</option>
+                </stats>
+            </param>
+        </interface>
+        <maxSR>180.0</maxSR><maxRecords>50000</maxRecords><verbosity>true</verbosity>
+        <testQuery>
+            <ra>10.788333</ra><dec>52.06</dec><sr>0.005555555555555556</sr>
+        </testQuery>
+    </capability>
+    <coverage>
+        <spatial>6/245 1129 1263 1521 2052 2125 2227 2245 2866 2949 2951 3803 4014 4285 4352 4376 4835 5027 5284 5311 5439 5806 5817 6618 6889 7061 7508 7888 7925 8017 8043 8152 8528 8555 8675 8809 8989 9009 9230 9252 9273 9655 9992 10004 10217 10432 10839 10877 11073 11259 11365 11512 11551 11667 11874 12010 12047 12335 12796 13120 13455 13707 13855 14858 15045 15064 15067 15909 16189 16301 18365 18387 18895 19325 22452 22505 23323 23469 23476 24023 24116 26292 28063 28279 28574 32059</spatial><spectral>3.2031150387835462e-22 3.243176138527326e-21</spectral><footprint ivo-id="ivo://ivoa.net/std/moc">https://cdsarc.cds.unistra.fr/viz-bin/moc/J/AJ/151/120?format=ascii</footprint><waveband>Infrared</waveband><waveband>Radio</waveband>
+    </coverage>
+    <tableset>
+        <schema>
+            <name>default</name>
+            <table>
+                <name>"J/AJ/151/120/table1"</name><description>3CR Sources 0.5&lt;z&lt;1 Observed with Herschel</description>
+                <column>
+                    <name>z</name><description>[0.0169/0.996] Redshift</description><ucd>src.redshift</ucd>
+                    <stats>
+                        <min>0.5191</min><percentile03>0.54334</percentile03><median>0.7545</median><percentile97>0.99298</percentile97><max>0.996</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>DL</name><description>[66/6426] Luminosity distance</description><unit>Mpc</unit><ucd>pos.distance</ucd>
+                    <stats>
+                        <min>2876.0</min><percentile03>3029.74</percentile03><median>4544.5</median><percentile97>6397.5</percentile97><max>6426.0</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>Type</name><description>Type of galaxy (2)</description><ucd>src.class</ucd><dataType xsi:type="vs:VOTableType" arraysize="4*">char</dataType>
+                </column>
+                <column>
+                    <name>PID</name><description>[1/6] Proposal identifier (3)</description><ucd>meta.code</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>SPObsID</name><description>[1342229105/1342268340]? Herschel/SPIRE ObsID</description><ucd>meta.id;obs</ucd><dataType xsi:type="vs:VOTableType">long</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>DEJ2000</name><description>Degree of Declination (J2000)</description><ucd>pos.eq.dec;meta.main</ucd>
+                </column>
+                <column>
+                    <name>3C</name><description>[006.1/459] 3CR source name (3CNNN.N)</description><ucd>meta.id;meta.main</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>n_DEJ2000</name><description>[c] Note on DEs (1)</description><ucd>meta.note</ucd><dataType xsi:type="vs:VOTableType" arraysize="1*">char</dataType>
+                </column>
+                <column>
+                    <name>n_Type</name><description>[b,c d] Note(s) on Type (1)</description><ucd>meta.note</ucd><dataType xsi:type="vs:VOTableType" arraysize="3*">char</dataType>
+                </column>
+                <column>
+                    <name>PObsID4</name><description>? Herschel/PACS fourth ObsID</description><ucd>meta.id;obs</ucd><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>SimbadName</name><description>Simbad column added by the CDS</description><ucd>meta.id</ucd><dataType xsi:type="vs:VOTableType" arraysize="8*">char</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>RAJ2000</name><description>Hour of Right Ascension (J2000)</description><ucd>pos.eq.ra;meta.main</ucd>
+                </column>
+                <column>
+                    <name>PObsID1</name><description>? Herschel/PACS first ObsID</description><ucd>meta.id;obs</ucd><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>PObsID3</name><description>? Herschel/PACS third ObsID</description><ucd>meta.id;obs</ucd><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>recno</name><description>Record number assigned by the VizieR team. Should Not be used for identification.</description><ucd>meta.record</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>PObsID2</name><description>? Herschel/PACS second ObsID</description><ucd>meta.id;obs</ucd><flag>nullable</flag>
+                </column>
+            </table>
+            <table>
+                <name>"J/AJ/151/120/table2"</name><description>3CR Sources z&lt;0.5 Observed with Herschel</description>
+                <column>
+                    <name>DL</name><description>[66/6426] Luminosity distance</description><unit>Mpc</unit><ucd>pos.distance</ucd>
+                    <stats>
+                        <min>66.0</min><percentile03>97.0</percentile03><median>804.0</median><percentile97>2329.0</percentile97><max>2475.0</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>z</name><description>[0.0169/0.996] Redshift</description><ucd>src.redshift</ucd>
+                    <stats>
+                        <min>0.0169</min><percentile03>0.02375</percentile03><median>0.174</median><percentile97>0.4365</percentile97><max>0.458</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>PObsID2</name><description>? Herschel/PACS second ObsID</description><ucd>meta.id;obs</ucd><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>recno</name><description>Record number assigned by the VizieR team. Should Not be used for identification.</description><ucd>meta.record</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>PObsID1</name><description>? Herschel/PACS first ObsID</description><ucd>meta.id;obs</ucd><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>PObsID3</name><description>? Herschel/PACS third ObsID</description><ucd>meta.id;obs</ucd><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>RAJ2000</name><description>Hour of Right Ascension (J2000)</description><ucd>pos.eq.ra;meta.main</ucd>
+                </column>
+                <column>
+                    <name>SimbadName</name><description>Simbad column added by the CDS</description><ucd>meta.id</ucd><dataType xsi:type="vs:VOTableType" arraysize="8*">char</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>PObsID4</name><description>? Herschel/PACS fourth ObsID</description><ucd>meta.id;obs</ucd><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>n_Type</name><description>[b,c d] Note(s) on Type (1)</description><ucd>meta.note</ucd><dataType xsi:type="vs:VOTableType" arraysize="3*">char</dataType>
+                </column>
+                <column>
+                    <name>DEJ2000</name><description>Degree of Declination (J2000)</description><ucd>pos.eq.dec;meta.main</ucd>
+                </column>
+                <column>
+                    <name>SPObsID</name><description>[1342229105/1342268340]? Herschel/SPIRE ObsID</description><ucd>meta.id;obs</ucd><dataType xsi:type="vs:VOTableType">long</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>PID</name><description>[1/6] Proposal identifier (3)</description><ucd>meta.code</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>Type</name><description>Type of galaxy (2)</description><ucd>src.class</ucd><dataType xsi:type="vs:VOTableType" arraysize="4*">char</dataType>
+                </column>
+                <column>
+                    <name>n_DEJ2000</name><description>[c] Note on DEs (1)</description><ucd>meta.note</ucd><dataType xsi:type="vs:VOTableType" arraysize="1*">char</dataType>
+                </column>
+                <column>
+                    <name>3C</name><description>[006.1/459] 3CR source name (3CNNN.N)</description><ucd>meta.id;meta.main</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+            </table>
+            <table>
+                <name>"J/AJ/151/120/table4"</name><description>3CR Sources 0.5&lt;z&lt;1 PACS and SPIRE Flux Densities</description>
+                <column>
+                    <name>F70</name><description>[6/783]? Herschel/PACS 70 {mu}m flux density</description><unit>mJy</unit><ucd>phot.flux.density;em.IR.30-60um</ucd>
+                    <stats>
+                        <min>6.0</min><percentile03>6.109999999999999</percentile03><median>15.0</median><percentile97>77.9</percentile97><max>90.0</max><fillFactor>97.44</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>F500</name><description>[23/1062]? Herschel/SPIRE 500{mu}m flux density</description><unit>mJy</unit><ucd>phot.flux.density;em.mm.400-750GHz</ucd>
+                    <stats>
+                        <min>23.0</min><percentile03>23.0</percentile03><median>42.0</median><percentile97>263.69</percentile97><max>266.0</max><fillFactor>30.77</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>F100</name><description>[6/867]? Herschel/PACS 100 {mu}m flux density</description><unit>mJy</unit><ucd>phot.flux.density;em.IR.60-100um</ucd>
+                    <stats>
+                        <min>6.0</min><percentile03>7.859999999999999</percentile03><median>19.0</median><percentile97>103.68</percentile97><max>126.0</max><fillFactor>82.05</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>F160</name><description>[13/1347]? Herschel/PACS 160 {mu}m flux density</description><unit>mJy</unit><ucd>phot.flux.density;em.mm.1500-3000GHz</ucd>
+                    <stats>
+                        <min>13.0</min><percentile03>18.0</percentile03><median>27.0</median><percentile97>148.16</percentile97><max>259.0</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>F250</name><description>[22/955]? Herschel/SPIRE 250 {mu}m flux density</description><unit>mJy</unit><ucd>phot.flux.density;em.mm.750-1500GHz</ucd>
+                    <stats>
+                        <min>31.0</min><percentile03>31.0</percentile03><median>51.0</median><percentile97>370.15999999999997</percentile97><max>452.0</max><fillFactor>30.77</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>F350</name><description>[20/741]? Herschel/SPIRE 350 {mu}m flux density</description><unit>mJy</unit><ucd>phot.flux.density;em.mm.750-1500GHz</ucd>
+                    <stats>
+                        <min>22.0</min><percentile03>25.3</percentile03><median>43.5</median><percentile97>351.61</percentile97><max>412.0</max><fillFactor>30.77</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>e_F100</name><description>[1/6]? 1{sigma} uncertainty in F100</description><unit>mJy</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>l_F100</name><description>[&lt;] Limit flag on F100</description><ucd>meta.code.error</ucd><dataType xsi:type="vs:VOTableType" arraysize="1*">char</dataType>
+                </column>
+                <column>
+                    <name>3C</name><description>[006.1/459] 3CR source name (3CNNN.N)</description><ucd>meta.id;meta.main</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>l_F160</name><description>[&lt;] Limit flag on F160</description><ucd>meta.code.error</ucd><dataType xsi:type="vs:VOTableType" arraysize="1*">char</dataType>
+                </column>
+                <column>
+                    <name>l_F70</name><description>[&lt;] Limit flag on F70</description><ucd>meta.code.error</ucd><dataType xsi:type="vs:VOTableType" arraysize="1*">char</dataType>
+                </column>
+                <column>
+                    <name>e_F250</name><description>[8/27]? 1{sigma} uncertainty in F250</description><unit>mJy</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>e_F500</name><description>[7/31]? 1{sigma} uncertainty in F500</description><unit>mJy</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>l_F250</name><description>[&lt;] Limit flag on F250</description><ucd>meta.code.error</ucd><dataType xsi:type="vs:VOTableType" arraysize="1*">char</dataType>
+                </column>
+                <column>
+                    <name>l_F500</name><description>[&lt;] Limit flag on F500</description><ucd>meta.code.error</ucd><dataType xsi:type="vs:VOTableType" arraysize="1*">char</dataType>
+                </column>
+                <column>
+                    <name>Fig</name><description>[1/15] Figure number in the paper</description><ucd>meta.id</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>e_F160</name><description>[3/24]? 1{sigma} uncertainty in F160</description><unit>mJy</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>e_F350</name><description>[8/26]? 1{sigma} uncertainty in F350</description><unit>mJy</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>recno</name><description>Record number assigned by the VizieR team. Should Not be used for identification.</description><ucd>meta.record</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>e_F70</name><description>[2/8]? 1{sigma} uncertainty in F70</description><unit>mJy</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>l_F350</name><description>[&lt;] Limit flag on F350</description><ucd>meta.code.error</ucd><dataType xsi:type="vs:VOTableType" arraysize="1*">char</dataType>
+                </column>
+            </table>
+            <table>
+                <name>"J/AJ/151/120/table5"</name><description>3CR Sources z&lt;0.5 PACS and SPIRE Flux Densities</description>
+                <column>
+                    <name>F250</name><description>[22/955]? Herschel/SPIRE 250 {mu}m flux density</description><unit>mJy</unit><ucd>phot.flux.density;em.mm.750-1500GHz</ucd>
+                    <stats>
+                        <min>22.0</min><percentile03>23.32</percentile03><median>90.0</median><percentile97>743.14</percentile97><max>955.0</max><fillFactor>47.92</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>F350</name><description>[20/741]? Herschel/SPIRE 350 {mu}m flux density</description><unit>mJy</unit><ucd>phot.flux.density;em.mm.750-1500GHz</ucd>
+                    <stats>
+                        <min>20.0</min><percentile03>24.619999999999997</percentile03><median>51.0</median><percentile97>702.72</percentile97><max>741.0</max><fillFactor>47.92</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>F100</name><description>[6/867]? Herschel/PACS 100 {mu}m flux density</description><unit>mJy</unit><ucd>phot.flux.density;em.IR.60-100um</ucd>
+                    <stats>
+                        <min>7.0</min><percentile03>8.2</percentile03><median>31.0</median><percentile97>543.3999999999994</percentile97><max>867.0</max><fillFactor>85.42</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>F160</name><description>[13/1347]? Herschel/PACS 160 {mu}m flux density</description><unit>mJy</unit><ucd>phot.flux.density;em.mm.1500-3000GHz</ucd>
+                    <stats>
+                        <min>13.0</min><percentile03>16.52</percentile03><median>37.0</median><percentile97>990.0400000000012</percentile97><max>1347.0</max><fillFactor>89.58</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>F70</name><description>[6/783]? Herschel/PACS 70 {mu}m flux density</description><unit>mJy</unit><ucd>phot.flux.density;em.IR.30-60um</ucd>
+                    <stats>
+                        <min>6.0</min><percentile03>6.0</percentile03><median>28.0</median><percentile97>292.9599999999998</percentile97><max>783.0</max><fillFactor>72.92</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>F500</name><description>[23/1062]? Herschel/SPIRE 500{mu}m flux density</description><unit>mJy</unit><ucd>phot.flux.density;em.mm.400-750GHz</ucd>
+                    <stats>
+                        <min>23.0</min><percentile03>23.0</percentile03><median>44.0</median><percentile97>939.24</percentile97><max>1062.0</max><fillFactor>47.92</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>3C</name><description>[006.1/459] 3CR source name (3CNNN.N)</description><ucd>meta.id;meta.main</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_F250</name><description>[8/27]? 1{sigma} uncertainty in F250</description><unit>mJy</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>l_F70</name><description>[&lt;] Limit flag on F70</description><ucd>meta.code.error</ucd><dataType xsi:type="vs:VOTableType" arraysize="1*">char</dataType>
+                </column>
+                <column>
+                    <name>l_F160</name><description>[&lt;] Limit flag on F160</description><ucd>meta.code.error</ucd><dataType xsi:type="vs:VOTableType" arraysize="1*">char</dataType>
+                </column>
+                <column>
+                    <name>e_F100</name><description>[1/6]? 1{sigma} uncertainty in F100</description><unit>mJy</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>l_F100</name><description>[&lt;] Limit flag on F100</description><ucd>meta.code.error</ucd><dataType xsi:type="vs:VOTableType" arraysize="1*">char</dataType>
+                </column>
+                <column>
+                    <name>l_F350</name><description>[&lt;] Limit flag on F350</description><ucd>meta.code.error</ucd><dataType xsi:type="vs:VOTableType" arraysize="1*">char</dataType>
+                </column>
+                <column>
+                    <name>e_F70</name><description>[2/8]? 1{sigma} uncertainty in F70</description><unit>mJy</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>e_F500</name><description>[7/31]? 1{sigma} uncertainty in F500</description><unit>mJy</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>recno</name><description>Record number assigned by the VizieR team. Should Not be used for identification.</description><ucd>meta.record</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>e_F350</name><description>[8/26]? 1{sigma} uncertainty in F350</description><unit>mJy</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>e_F160</name><description>[3/24]? 1{sigma} uncertainty in F160</description><unit>mJy</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">int</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>Fig</name><description>[1/15] Figure number in the paper</description><ucd>meta.id</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>l_F500</name><description>[&lt;] Limit flag on F500</description><ucd>meta.code.error</ucd><dataType xsi:type="vs:VOTableType" arraysize="1*">char</dataType>
+                </column>
+                <column>
+                    <name>l_F250</name><description>[&lt;] Limit flag on F250</description><ucd>meta.code.error</ucd><dataType xsi:type="vs:VOTableType" arraysize="1*">char</dataType>
+                </column>
+            </table>
+            <table>
+                <name>"J/AJ/151/120/table6"</name><description>Median Spectral Templates for Different Galaxy Types Separated for Low- (z&lt;0.5) and Medium-redshift (0.5&lt;z&lt;1)</description>
+                <column>
+                    <name>log(nuLnu)Hl</name><description>[8.7/11.1] Log of rest frame luminosity {nu}L_{nu}_ for high-excitation radio low-z galaxy type</description><unit>log(solLum)</unit><ucd>phys.luminosity</ucd>
+                    <stats>
+                        <min>8.7</min><percentile03>8.817</percentile03><median>10.6</median><percentile97>11.0</percentile97><max>11.1</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>log(nuLnu)L</name><description>[8.7/11.2]? Log of rest frame luminosity {nu}L_{nu}_ for low-excitation radio galaxy type</description><unit>log(solLum)</unit><ucd>phys.luminosity</ucd>
+                    <stats>
+                        <min>8.7</min><percentile03>8.814</percentile03><median>9.6</median><percentile97>11.1</percentile97><max>11.2</max><fillFactor>97.5</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>log(nuLnu)Sl</name><description>[10.2/12.2]? Log of rest frame luminosity {nu}L_{nu}_ for steep-spectrum low-z quasar type</description><unit>log(solLum)</unit><ucd>phys.luminosity</ucd>
+                    <stats>
+                        <min>10.2</min><percentile03>10.299000000000001</percentile03><median>11.7</median><percentile97>12.100999999999999</percentile97><max>12.2</max><fillFactor>85.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>log(nuLnu)B</name><description>[9.1/11.5]? Log of rest frame luminosity {nu}L_{nu}_ for broad-line radio galaxy type</description><unit>log(solLum)</unit><ucd>phys.luminosity</ucd>
+                    <stats>
+                        <min>9.1</min><percentile03>9.213999999999999</percentile03><median>11.0</median><percentile97>11.5</percentile97><max>11.5</max><fillFactor>97.5</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>log(nuLnu)Fl</name><description>[8.4/11]? Log of rest frame luminosity {nu}L_{nu}_ for flat-spectrum low-z quasar type</description><unit>log(solLum)</unit><ucd>phys.luminosity</ucd>
+                    <stats>
+                        <min>8.4</min><percentile03>8.825000000000001</percentile03><median>10.55</median><percentile97>11.0</percentile97><max>11.0</max><fillFactor>90.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>log(nuLnu)Sm</name><description>[10.3/12.5] Log of rest frame luminosity {nu}L_{nu}_ for steep-spectrum medium-z quasar type</description><unit>log(solLum)</unit><ucd>phys.luminosity</ucd>
+                    <stats>
+                        <min>10.3</min><percentile03>10.4</percentile03><median>12.0</median><percentile97>12.483</percentile97><max>12.5</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>log(nuLnu)Hm</name><description>[10/11.5] Log of rest frame luminosity {nu}L_{nu}_ for high-excitation radio medium-z galaxy type</description><unit>log(solLum)</unit><ucd>phys.luminosity</ucd>
+                    <stats>
+                        <min>10.0</min><percentile03>10.116999999999999</percentile03><median>11.05</median><percentile97>11.4</percentile97><max>11.5</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>log(nuLnu)Fm</name><description>[10.2/12.1]? Log of rest frame luminosity {nu}L_{nu}_ for flat-spectrum medium-z quasar type</description><unit>log(solLum)</unit><ucd>phys.luminosity</ucd>
+                    <stats>
+                        <min>10.2</min><percentile03>10.414</percentile03><median>11.8</median><percentile97>12.086</percentile97><max>12.1</max><fillFactor>97.5</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)Hl</name><description>[0.1/1] Uncertainty in log(nuLnu)Hl</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)B</name><description>[0.1/0.9]? Uncertainty in log(nuLnu)B</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)L</name><description>[0.1/1.3]? Uncertainty in log(nuLnu)L</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>log(lrest)</name><description>[-0.4/6.6] Log of rest wavelength {lambda}_Rest_</description><unit>log(um)</unit><ucd>em.wl</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)Sl</name><description>[0.2/1.6]? Uncertainty in log(nuLnu)Sl</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)Fm</name><description>[0.2/0.3]? Uncertainty in log(nuLnu)Fm</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)Hm</name><description>[0.1/0.7] Uncertainty in log(nuLnu)Hm</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)Fl</name><description>[0.3/0.8]? Uncertainty in log(nuLnu)Fl</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType><flag>nullable</flag>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)Sm</name><description>[0.1/0.8]Uncertainty in log(nuLnu)Sm</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>recno</name><description>Record number assigned by the VizieR team. Should Not be used for identification.</description><ucd>meta.record</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+            </table>
+            <table>
+                <name>"J/AJ/151/120/table10"</name><description>Host Fit Parameters for the 3Cs at 0.5&lt;z&lt;1.0</description>
+                <column>
+                    <name>M*</name><description>[0.3/19] Stellar mass</description><unit>1e+11solMass</unit><ucd>phys.mass</ucd>
+                    <stats>
+                        <min>0.30000000000000004</min><percentile03>0.7560000000000001</percentile03><median>3.7000000000000006</median><percentile97>17.580000000000002</percentile97><max>19.000000000000004</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>LHost</name><description>[0.9/28] Luminosity of the host galaxy</description><unit>1e+11solLum</unit><ucd>phys.luminosity</ucd>
+                    <stats>
+                        <min>0.9000000000000001</min><percentile03>1.2700000000000002</percentile03><median>4.900000000000001</median><percentile97>25.720000000000002</percentile97><max>28.000000000000007</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>MBH</name><description>[3.8/428.7] Black hole mass</description><unit>1e+07solMass</unit><ucd>phys.mass</ucd>
+                    <stats>
+                        <min>3.8</min><percentile03>11.149999999999999</percentile03><median>68.6</median><percentile97>393.15599999999995</percentile97><max>428.7</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_logAge</name><description>[0.03/0.3] Upper limit uncertainty in logAge</description><unit>log(yr)</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>recno</name><description>Record number assigned by the VizieR team. Should Not be used for identification.</description><ucd>meta.record</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>E_LHost</name><description>[0.2/8.4] Upper limit uncertainty in LHost</description><unit>1e+11solLum</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_logAge</name><description>[0.04/0.3] Lower limit uncertainty in logAge</description><unit>log(yr)</unit><ucd>stat.error;time.age</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>logAHost</name><description>[-15.72/-14.42] Log of the host galaxy flux</description><unit>log(W.m**-2)</unit><ucd>phot.flux</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_MBH</name><description>[2.6/1030.6] Upper limit uncertainty in MBH</description><unit>1e+07solMass</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_MBH</name><description>[1.9/256.5] Lower limit uncertainty in MBH</description><unit>1e+07solMass</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_M*</name><description>[0.1/7.2] Lower limit uncertainty in M*</description><unit>1e+11solMass</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>Z</name><description>[0.004/0.05] Metallicity</description><ucd>phys.abund.Z</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>upsilon</name><description>[6.9/10] Timescale {upsilon}</description><unit>log(yr)</unit><ucd>time.scale</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_upsilon</name><description>[0.3/2.2] Upper limit uncertainty in upsilon</description><unit>log(yr)</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_logAHost</name><description>[0.03/0.23] Lower limit uncertainty in logAHost</description><unit>log(W.m**-2)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_M*</name><description>[0.1/19] Upper limit uncertainty in M*</description><unit>1e+11solMass</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>logAge</name><description>[9.1/10] Log of the age of the stellar population</description><unit>log(yr)</unit><ucd>time.age</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_upsilon</name><description>[0.3/2] Lower limit uncertainty in upsilon</description><unit>log(yr)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_LHost</name><description>[0.2/8.5] Lower limit uncertainty in LHost</description><unit>1e+11solLum</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_logAHost</name><description>[0.03/0.27] Upper limit uncertainty in logAHost</description><unit>log(W.m**-2)</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>3C</name><description>[6.1/455] 3CR source name (3CNNN.N)</description><ucd>meta.id;meta.main</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+            </table>
+            <table>
+                <name>"J/AJ/151/120/table11"</name><description>Host Fit Parameters for the 3Cs at z&lt;0.5</description>
+                <column>
+                    <name>LHost</name><description>[0.5/170] Luminosity of the host galaxy</description><unit>1e+10solLum</unit><ucd>phys.luminosity</ucd>
+                    <stats>
+                        <min>0.4999999999999999</min><percentile03>2.2819999999999996</percentile03><median>11.499999999999998</median><percentile97>135.89999999999992</percentile97><max>169.99999999999997</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>M*</name><description>[0.4/210] Log of stellar mass</description><unit>1e+10solMass</unit><ucd>phys.mass</ucd>
+                    <stats>
+                        <min>0.4</min><percentile03>1.246</percentile03><median>8.5</median><percentile97>69.94999999999999</percentile97><max>210.0</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>MBH</name><description>[0.4/479.6] Black hole mass</description><unit>1e+07solMass</unit><ucd>phys.mass</ucd>
+                    <stats>
+                        <min>0.4</min><percentile03>1.528</percentile03><median>13.2</median><percentile97>140.00799999999995</percentile97><max>479.6</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>upsilon</name><description>[6.6/11] Timescale {upsilon}</description><unit>log(yr)</unit><ucd>time.scale</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_upsilon</name><description>[0.2/2.1] Upper limit uncertainty in upsilon</description><unit>log(yr)</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_logAHost</name><description>[0.01/0.24] Lower limit uncertainty in logAHost</description><unit>log(W.m**-2)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_M*</name><description>[0.1/70] Upper limit uncertainty in M*</description><unit>1e+10solMass</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>logAge</name><description>[9.1/10] Log of the age of the stellar population</description><unit>log(yr)</unit><ucd>time.age</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_upsilon</name><description>[0.1/1.6] Lower limit uncertainty in upsilon</description><unit>log(yr)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_LHost</name><description>[0.1/44] Lower limit uncertainty in LHost</description><unit>1e+10solLum</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_logAHost</name><description>[0.01/0.17] Upper limit uncertainty in logAHost</description><unit>log(W.m**-2)</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>3C</name><description>[20/459] 3CR source name (3CNNN.N)</description><ucd>meta.id;meta.main</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_logAge</name><description>[0.01/0.3] Upper limit uncertainty in logAge</description><unit>log(yr)</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_LHost</name><description>[0.1/59] Upper limit uncertainty in LHost</description><unit>1e+10solLum</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>recno</name><description>Record number assigned by the VizieR team. Should Not be used for identification.</description><ucd>meta.record</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>e_logAge</name><description>[0.02/0.24] Lower limit uncertainty in logAge</description><unit>log(yr)</unit><ucd>stat.error;time.age</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>logAHost</name><description>[-15.14/-12.21] Log of the host galaxy flux</description><unit>log(W.m**-2)</unit><ucd>phot.flux</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_MBH</name><description>[0.2/538.2] Upper limit uncertainty in MBH</description><unit>1e+07solMass</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_MBH</name><description>[0.2/265.3] Lower limit uncertainty in MBH</description><unit>1e+07solMass</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_M*</name><description>[0.2/65] Lower limit uncertainty in M*</description><unit>1e+10solMass</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>Z</name><description>[0.004/0.05] Metallicity</description><ucd>phys.abund.Z</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+            </table>
+            <table>
+                <name>"J/AJ/151/120/table12"</name><description>AGN Fit Parameters for the 3Cs at 0.5&lt;z&lt;1.0</description>
+                <column>
+                    <name>tau</name><description>[30/80] Optical depth {tau}</description><ucd>phys.absorption.opticalDepth</ucd>
+                    <stats>
+                        <min>30.0</min><percentile03>30.0</percentile03><median>50.0</median><percentile97>50.0</percentile97><max>80.0</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>LAGN</name><description>[0.9/56] AGN luminosity</description><unit>1e+11solLum</unit><ucd>phys.luminosity</ucd>
+                    <stats>
+                        <min>0.9000000000000001</min><percentile03>1.098</percentile03><median>16.000000000000004</median><percentile97>52.580000000000005</percentile97><max>56.000000000000014</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>LAGN/LEdd</name><description>[0.0044/0.508] Ratio of AGN luminosity in the MIR and Eddington luminosity (G1)</description><ucd>phys.luminosity;arith.ratio</ucd>
+                    <stats>
+                        <min>0.0044</min><percentile03>0.005045999999999999</percentile03><median>0.0537</median><percentile97>0.33448199999999995</percentile97><max>0.508</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>Inc</name><description>[0/75] Inclination angle to the observer</description><unit>deg</unit><ucd>src.orbital.inclination</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>E_LAGN/LEdd</name><description>[0.0045/0.7034] Upper limit uncertainty in LAGN/LEdd</description><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>logAagn</name><description>[-15.6/-14.11] Log of the AGN-heated warm dust flux</description><unit>log(W.m**-2)</unit><ucd>phot.flux</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_LAGN</name><description>[0.1/8.7] Upper limit uncertainty in LAGN</description><unit>1e+11solLum</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>recno</name><description>Record number assigned by the VizieR team. Should Not be used for identification.</description><ucd>meta.record</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>e_LAGN</name><description>[0.1/7.7] Lower limit uncertainty in LAGN</description><unit>1e+11solLum</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>3C</name><description>[6.1/455] 3CR source name (3CNNN.N)</description><ucd>meta.id;meta.main</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_logAagn</name><description>[0.01/0.12] Upper limit uncertainty in logAagn</description><unit>log(W.m**-2)</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>a</name><description>[-2/0] Index of the power law for radial dust-cloud distribution</description><ucd>meta.code;spect.index</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_LAGN/LEdd</name><description>[0.0021/0.2891] Lower limit uncertainty in LAGN/LEdd</description><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_logAagn</name><description>[0.02/0.22] Lower limit uncertainty in logAagn</description><unit>log(W.m**-2)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>theta</name><description>[5/60] Half opening angle {theta}</description><unit>deg</unit><ucd>pos.posAng</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>NCloud</name><description>[2.5/10] Number of clouds along the equatorial line of sight</description><ucd>meta.number</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+            </table>
+            <table>
+                <name>"J/AJ/151/120/table13"</name><description>AGN Fit Parameters for the 3Cs at z&lt;0.5</description>
+                <column>
+                    <name>LAGN/LEdd</name><description>[0.0001/0.6886] Ratio of AGN luminosity in the MIR and Eddington luminosity (G1)</description><ucd>phys.luminosity;arith.ratio</ucd>
+                    <stats>
+                        <min>0.0001</min><percentile03>0.000141</percentile03><median>0.0111</median><percentile97>0.47839599999999904</percentile97><max>0.6886</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>tau</name><description>[30/80] Optical depth {tau}</description><ucd>phys.absorption.opticalDepth</ucd>
+                    <stats>
+                        <min>30.0</min><percentile03>30.0</percentile03><median>30.0</median><percentile97>50.0</percentile97><max>80.0</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>LAGN</name><description>[0.1/3900] AGN luminosity</description><unit>1e+09solLum</unit><ucd>phys.luminosity</ucd>
+                    <stats>
+                        <min>0.10000000000000002</min><percentile03>0.5820000000000001</percentile03><median>45.50000000000001</median><percentile97>3518.0</percentile97><max>3900.000000000001</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>NCloud</name><description>[2.5/10] Number of clouds along the equatorial line of sight</description><ucd>meta.number</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>theta</name><description>[5/60] Half opening angle {theta}</description><unit>deg</unit><ucd>pos.posAng</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>a</name><description>[-2/0] Index of the power law for radial dust-cloud distribution</description><ucd>meta.code;spect.index</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_logAagn</name><description>[0.01/0.27] Lower limit uncertainty in logAagn</description><unit>log(W.m**-2)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_LAGN/LEdd</name><description>[0.0001/0.3371] Lower limit uncertainty in LAGN/LEdd</description><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>3C</name><description>[20/459] 3CR source name (3CNNN.N)</description><ucd>meta.id;meta.main</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_logAagn</name><description>[0.01/0.23] Upper limit uncertainty in logAagn</description><unit>log(W.m**-2)</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_LAGN</name><description>[0.1/580] Upper limit uncertainty in LAGN</description><unit>1e+09solLum</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>logAagn</name><description>[-16.23/-12.89] Log of the AGN-heated warm dust flux</description><unit>log(W.m**-2)</unit><ucd>phot.flux</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_LAGN</name><description>[0.1/890] Lower limit uncertainty in LAGN</description><unit>1e+09solLum</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>recno</name><description>Record number assigned by the VizieR team. Should Not be used for identification.</description><ucd>meta.record</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>Inc</name><description>[0/75] Inclination angle to the observer</description><unit>deg</unit><ucd>src.orbital.inclination</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>E_LAGN/LEdd</name><description>[0.0001/1.184] Upper limit uncertainty in LAGN/LEdd</description><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+            </table>
+            <table>
+                <name>"J/AJ/151/120/table14"</name><description>FIR Fit Parameters for the 3Cs at 0.5&lt;z&lt;1.0</description>
+                <column>
+                    <name>LFIR</name><description>[1/32] Luminosity of cool FIR emitting dust</description><unit>1e+11solLum</unit><ucd>phys.luminosity;em.IR</ucd>
+                    <stats>
+                        <min>1.0000000000000002</min><percentile03>1.2000000000000002</percentile03><median>4.800000000000001</median><percentile97>20.720000000000002</percentile97><max>32.00000000000001</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>TFIR</name><description>[20/47] FIR dust temperature</description><unit>K</unit><ucd>phys.temperature</ucd>
+                    <stats>
+                        <min>20.0</min><percentile03>21.14</percentile03><median>32.0</median><percentile97>42.86</percentile97><max>47.0</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>MDust</name><description>[1.85/264.41] Dust mass</description><unit>1e+07solMass</unit><ucd>phys.mass</ucd>
+                    <stats>
+                        <min>1.8500000000000003</min><percentile03>2.1634</percentile03><median>16.17</median><percentile97>226.97799999999998</percentile97><max>264.41</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>MDust/M*</name><description>[0.017/8.814] Dust-to-stellar mass ratio in per mille units</description><ucd>phys.mass;arith.ratio</ucd>
+                    <stats>
+                        <min>0.017</min><percentile03>0.06199999999999999</percentile03><median>0.37</median><percentile97>4.1350799999999985</percentile97><max>8.814</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>logAFIR</name><description>[-15.59/-14.21] Log of the SF-heated cool dust flux</description><unit>log(W.m**-2)</unit><ucd>phot.flux</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_LFIR</name><description>[0.1/4.8] Lower limit uncertainty in LFIR</description><unit>1e+11solLum</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_SFR</name><description>[1.6/69.5] Upper limit uncertainty in SFR</description><unit>solMass/yr</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>recno</name><description>Record number assigned by the VizieR team. Should Not be used for identification.</description><ucd>meta.record</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>E_LFIR</name><description>[0.1/4] Upper limit uncertainty in LFIR</description><unit>1e+11solLum</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_MDust</name><description>[0.13/125.32] Lower limit uncertainty in MDust</description><unit>1e+07solMass</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_TFIR</name><description>[0.2/3.1] Lower limit uncertainty in TFIR</description><unit>K</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>SFR</name><description>[16.8/555.8] Star formation rate</description><unit>solMass/yr</unit><ucd>phys.SFR</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_TFIR</name><description>[0.2/3.1] Upper limit uncertainty in TFIR</description><unit>K</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_SFR</name><description>[1.4/83.4] Lower limit uncertainty in SFR</description><unit>solMass/yr</unit><ucd>stat.error;phys.SFR</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_logAFIR</name><description>[0.03/0.23] Lower limit uncertainty in logAFIR</description><unit>log(W.m**-2)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>3C</name><description>[6.1/455] 3CR source name (3CNNN.N)</description><ucd>meta.id;meta.main</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_logAFIR</name><description>[0.02/0.15] Upper limit uncertainty in logAFIR</description><unit>log(W.m**-2)</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_MDust</name><description>[0.09/57.8] Upper limit uncertainty in MDust</description><unit>1e+07solMass</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+            </table>
+            <table>
+                <name>"J/AJ/151/120/table15"</name><description>FIR Fit Parameters for the 3Cs at z&lt;0.5</description>
+                <column>
+                    <name>LFIR</name><description>[0.3/3300] Luminosity of cool FIR emitting dust</description><unit>1e+09solLum</unit><ucd>phys.luminosity;em.IR</ucd>
+                    <stats>
+                        <min>0.30000000000000004</min><percentile03>1.1000000000000003</percentile03><median>21.000000000000004</median><percentile97>746.4999999999989</percentile97><max>3300.0000000000005</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>TFIR</name><description>[21/66] FIR dust temperature</description><unit>K</unit><ucd>phys.temperature</ucd>
+                    <stats>
+                        <min>21.0</min><percentile03>21.41</percentile03><median>30.0</median><percentile97>47.589999999999996</percentile97><max>66.0</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>MDust</name><description>[0.02/27.37] Dust mass</description><unit>1e+07solMass</unit><ucd>phys.mass</ucd>
+                    <stats>
+                        <min>0.02</min><percentile03>0.0341</percentile03><median>0.915</median><percentile97>19.660799999999945</percentile97><max>27.37</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>MDust/M*</name><description>[0.004/5.474] Dust-to-stellar mass ratio in per mille units</description><ucd>phys.mass;arith.ratio</ucd>
+                    <stats>
+                        <min>0.004</min><percentile03>0.00541</percentile03><median>0.11</median><percentile97>1.586799999999997</percentile97><max>5.474</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>logAFIR</name><description>[-15.7/-13.39] Log of the SF-heated cool dust flux</description><unit>log(W.m**-2)</unit><ucd>phot.flux</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_LFIR</name><description>[0.1/320] Lower limit uncertainty in LFIR</description><unit>1e+09solLum</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_SFR</name><description>[0/52.1] Upper limit uncertainty in SFR</description><unit>solMass/yr</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>recno</name><description>Record number assigned by the VizieR team. Should Not be used for identification.</description><ucd>meta.record</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>E_LFIR</name><description>[0.2/300] Upper limit uncertainty in LFIR</description><unit>1e+09solLum</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_MDust</name><description>[0/6.37] Lower limit uncertainty in MDust</description><unit>1e+07solMass</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>SFR</name><description>[0.1/573.2] Star formation rate</description><unit>solMass/yr</unit><ucd>phys.SFR</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_TFIR</name><description>[0.2/2.5] Lower limit uncertainty in TFIR</description><unit>K</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>3C</name><description>[20/459] 3CR source name (3CNNN.N)</description><ucd>meta.id;meta.main</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_logAFIR</name><description>[0.02/0.2] Upper limit uncertainty in logAFIR</description><unit>log(W.m**-2)</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_MDust</name><description>[0/4.26] Upper limit uncertainty in MDust</description><unit>1e+07solMass</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>E_TFIR</name><description>[0.2/2.5] Upper limit uncertainty in TFIR</description><unit>K</unit><ucd>stat.error;stat.max</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_SFR</name><description>[0/55.6] Lower limit uncertainty in SFR</description><unit>solMass/yr</unit><ucd>stat.error;phys.SFR</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_logAFIR</name><description>[0.03/0.31] Lower limit uncertainty in logAFIR</description><unit>log(W.m**-2)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+            </table>
+            <table>
+                <name>"J/AJ/151/120/table16"</name><description>Monochromatic Luminosities for the 3Cs at 0.5&lt;z&lt;1.0</description>
+                <column>
+                    <name>log(nuLnu)178MHz</name><description>[6.58/10.97] Log of rest frame 178 MHz monochromatic luminosity {nu}L_{nu}_^178MHz^</description><unit>log(solLum)</unit><ucd>phys.luminosity;em.radio.100-200MHz</ucd>
+                    <stats>
+                        <min>9.74</min><percentile03>9.7514</percentile03><median>10.16</median><percentile97>10.7302</percentile97><max>10.97</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>log(nuLnu)30um</name><description>[7.98/12.34] Log of rest frame 30 {mu}m monochromatic luminosity {nu}L_{nu}_^30{mu}m^</description><unit>log(solLum)</unit><ucd>phys.luminosity;em.IR.15-30um</ucd>
+                    <stats>
+                        <min>10.51</min><percentile03>10.8142</percentile03><median>11.7</median><percentile97>12.3058</percentile97><max>12.34</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>log(nuLnu)60um</name><description>[8.19/12.45] Log of rest frame 60 {mu}m monochromatic luminosity {nu}L_{nu}_^60{mu}m^</description><unit>log(solLum)</unit><ucd>phys.luminosity;em.IR.30-60um</ucd>
+                    <stats>
+                        <min>10.72</min><percentile03>10.8552</percentile03><median>11.63</median><percentile97>12.271799999999999</percentile97><max>12.34</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>log(nuLnu)30GHz</name><description>[7.21/11.6] Log of rest frame 30 GHz monochromatic luminosity {nu}L_{nu}_^30GHz^</description><unit>log(solLum)</unit><ucd>phys.luminosity;em.mm.30-50GHz</ucd>
+                    <stats>
+                        <min>9.92</min><percentile03>10.0114</percentile03><median>10.47</median><percentile97>11.463000000000001</percentile97><max>11.6</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>log(nuLnu)100um</name><description>[8.44/12.31] Log of rest frame 100 {mu}m monochromatic luminosity {nu}L_{nu}_^100{mu}m^</description><unit>log(solLum)</unit><ucd>phys.luminosity;em.IR.60-100um</ucd>
+                    <stats>
+                        <min>10.9</min><percentile03>10.9098</percentile03><median>11.59</median><percentile97>12.0872</percentile97><max>12.23</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>recno</name><description>Record number assigned by the VizieR team. Should Not be used for identification.</description><ucd>meta.record</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)100um</name><description>[0.001/0.283] Uncertainty in log(nuLnu)100um</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)178MHz</name><description>[0.001/0.065] Uncertainty in log(nuLnu)178MHz</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)30um</name><description>[0.002/0.239] Uncertainty in log(nuLnu)30um</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)60um</name><description>[0.001/0.137] Uncertainty in log(nuLnu)60um</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)30GHz</name><description>[0.005/0.08] Uncertainty in log(nuLnu)30GHz</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>3C</name><description>[6.1/459] 3CR source name (3CNNN.N)</description><ucd>meta.id;meta.main</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+            </table>
+            <table>
+                <name>"J/AJ/151/120/table17"</name><description>Monochromatic Luminosities for the 3Cs at z&lt;0.5</description>
+                <column>
+                    <name>log(nuLnu)30GHz</name><description>[7.21/11.6] Log of rest frame 30 GHz monochromatic luminosity {nu}L_{nu}_^30GHz^</description><unit>log(solLum)</unit><ucd>phys.luminosity;em.mm.30-50GHz</ucd>
+                    <stats>
+                        <min>7.21</min><percentile03>7.3717</percentile03><median>9.184999999999999</median><percentile97>10.441799999999999</percentile97><max>10.99</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>log(nuLnu)100um</name><description>[8.44/12.31] Log of rest frame 100 {mu}m monochromatic luminosity {nu}L_{nu}_^100{mu}m^</description><unit>log(solLum)</unit><ucd>phys.luminosity;em.IR.60-100um</ucd>
+                    <stats>
+                        <min>8.44</min><percentile03>8.849400000000001</percentile03><median>10.21</median><percentile97>11.6267</percentile97><max>12.31</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>log(nuLnu)178MHz</name><description>[6.58/10.97] Log of rest frame 178 MHz monochromatic luminosity {nu}L_{nu}_^178MHz^</description><unit>log(solLum)</unit><ucd>phys.luminosity;em.radio.100-200MHz</ucd>
+                    <stats>
+                        <min>6.58</min><percentile03>6.7692</percentile03><median>8.83</median><percentile97>9.885900000000001</percentile97><max>10.05</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>log(nuLnu)30um</name><description>[7.98/12.34] Log of rest frame 30 {mu}m monochromatic luminosity {nu}L_{nu}_^30{mu}m^</description><unit>log(solLum)</unit><ucd>phys.luminosity;em.IR.15-30um</ucd>
+                    <stats>
+                        <min>7.98</min><percentile03>8.6441</percentile03><median>10.375</median><percentile97>12.0577</percentile97><max>12.33</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>log(nuLnu)60um</name><description>[8.19/12.45] Log of rest frame 60 {mu}m monochromatic luminosity {nu}L_{nu}_^60{mu}m^</description><unit>log(solLum)</unit><ucd>phys.luminosity;em.IR.30-60um</ucd>
+                    <stats>
+                        <min>8.19</min><percentile03>8.8092</percentile03><median>10.280000000000001</median><percentile97>11.851799999999999</percentile97><max>12.45</max><fillFactor>100.0</fillFactor>
+                    </stats>
+                    <dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)60um</name><description>[0.001/0.137] Uncertainty in log(nuLnu)60um</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)30um</name><description>[0.002/0.239] Uncertainty in log(nuLnu)30um</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)30GHz</name><description>[0.005/0.08] Uncertainty in log(nuLnu)30GHz</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>3C</name><description>[6.1/459] 3CR source name (3CNNN.N)</description><ucd>meta.id;meta.main</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)178MHz</name><description>[0.001/0.065] Uncertainty in log(nuLnu)178MHz</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>e_log(nuLnu)100um</name><description>[0.001/0.283] Uncertainty in log(nuLnu)100um</description><unit>log(solLum)</unit><ucd>stat.error</ucd><dataType xsi:type="vs:VOTableType">float</dataType>
+                </column>
+                <column>
+                    <name>recno</name><description>Record number assigned by the VizieR team. Should Not be used for identification.</description><ucd>meta.record</ucd><dataType xsi:type="vs:VOTableType">int</dataType>
+                </column>
+            </table>
+        </schema>
+    </tableset>
+</ri:Resource>
