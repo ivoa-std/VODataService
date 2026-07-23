@@ -2840,6 +2840,14 @@ descriptions in TAP 1.1 \citep{2019ivoa.spec.0927D}, this version of
 VODataService deprecates the use of \xmlel{vs:TAPType}.  New software
 should only generate \xmlel{vs:VOTableType}s in \xmlel{tableset}s.
 
+For database types without direct VOTable counterparts (e.g., timestamp,
+point, interval), publishers should fill the \xmlel{extendedType}
+attribute to the appropriate a VOTable \xmlel{xtype} as defined by DALI
+\citep{2017ivoa.spec.0517D}.  It was envisaged to enable the use other
+extended type systems by setting \xmlel{extendedSchema} to a non-empty
+value.  In this version of VODataService, this is discouraged because it
+would create interoperability problems when using extended types in data
+discovery.
 
 % GENERATED: !schemadoc VODataService-v1.3.xsd VOTableType
 \begin{generated}
@@ -2917,14 +2925,7 @@ should only generate \xmlel{vs:VOTableType}s in \xmlel{tableset}s.
 
 
 
-When the actual column type is not
-well matched to a VOTable data type, authors are
-encouraged to use the \xmlel{extendedType} attribute to refer to
-a more specific type.  This will usually be a VOTable \xmlel{xtype} as
-defined by DALI \citep{2017ivoa.spec.0517D}.  Using different extended
-type schemes is possible by setting \xmlel{extendedSchema} to a
-non-empty value; data providers using this extension mechanism should
-explain their schema in an IVOA Note.
+
 
 \appendix
 
