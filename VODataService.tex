@@ -1868,6 +1868,44 @@ desired:
        \xmlel{vs:TableParam} type.
 \end{enumerate}
 
+\subsubsection{Linking Capabilities and Tables}
+
+In VODataService, tables and capabilities stand next to each other
+without any implied connection.  While this is suitable for protocols
+like TAP that make an entire tableset availble, it is a limitation for
+protocols like Simple Cone Search that only operate on a single table.
+
+As an example, consider a resource with three tables, one
+containing information on spectral lines employed by that
+resource's creators, the other two two sets of objects with
+radial velocities derived from some spectra, where the metadata schemes
+may be slightly different because two different instruments were used.
+
+This could have an auxiliary TAP capability serving all tables, a SLAP
+service for the spectral lines, one cone search service each for the two
+object tables, and perhaps a datalink service linking object rows to the
+progenitor spectra, which would work for both object tables.
+
+VODataService does not have generic mechanism for capturing such an n:m
+relationship between tables and capabilities.  This is because anything
+based on \xmlel{id} references is very hard to implement when resource
+records are frequently combined into joint documents, for instance,
+while building OAI-PMH responses: The combining software would need to
+disambiguate id-s and references to them.  Also, exploiting metadata of
+this type in discovery usually leads to ugly query patterns.  Finally,
+the references would not work when capabilities and tables come in two
+physical documents as in VOSI.
+
+Because of these difficulties, protocols that need to link up
+capabilities and tables should use the table names (which at least for
+pragmatic reasons will be unique within a resource) to reference
+elements in the tableset.  This could, for instance, be in a
+\xmlel{stats} element of an input parameter, or in dediacated elements
+in extensions of \xmlel{vr:Capability}.  There is no provision for
+inverse (i.e., from table to capability) references; clients can build
+the inverse relationship locally.
+
+
 \subsection{Interface Type Extension: ParamHTTP}
 \label{sect:paramif}
 
