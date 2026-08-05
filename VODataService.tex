@@ -1887,20 +1887,20 @@ object tables, and perhaps a datalink service linking object rows to the
 progenitor spectra, which would work for both object tables.
 
 VODataService does not have generic mechanism for capturing such an n:m
-relationship between tables and capabilities.  This is because anything
-based on \xmlel{id} references is very hard to implement when resource
+relationship between tables and capabilities.  This is because the
+uniqueness requirements on the \xmlel{id} attribute (cf.~sect.~3.3.1 in
+\citet{std:XML}) is very hard to maintain when resource
 records are frequently combined into joint documents, for instance,
-while building OAI-PMH responses: The combining software would need to
-disambiguate id-s and references to them.  Also, exploiting metadata of
+while building OAI-PMH responses.  Also, exploiting metadata of
 this type in discovery usually leads to ugly query patterns.  Finally,
-the references would not work when capabilities and tables come in two
+id references would break when capabilities and tables come in two
 physical documents as in VOSI.
 
 Because of these difficulties, protocols that need to link up
 capabilities and tables should use the table names (which at least for
 pragmatic reasons will be unique within a resource) to reference
 elements in the tableset.  This could, for instance, be in a
-\xmlel{stats} element of an input parameter, or in dediacated elements
+\xmlel{stats} element of an input parameter, or in dedicated elements
 in extensions of \xmlel{vr:Capability}.  There is no provision for
 inverse (i.e., from table to capability) references; clients can build
 the inverse relationship locally.
