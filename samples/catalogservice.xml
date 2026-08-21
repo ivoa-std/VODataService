@@ -99,7 +99,7 @@
             The radial velocity , derived from derived from the shift
             of some spectral feature, in km/sec
           </description>
-          <unit>km/sec</unit>
+          <unit>km/s</unit>
           <ucd>src.spect.dopplerVeloc</ucd>
           <dataType xsi:type="vs:VOTableType">int</dataType>
         </column>

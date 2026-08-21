@@ -98,7 +98,7 @@ http://nedwww.ipac.caltech.edu/cgi-bin/nph-datasearch?search_type=Redshifts&amp;
             The radial velocity , derived from derived from the shift
             of some spectral feature, in km/sec
           </description>
-          <unit>km/sec</unit>
+          <unit>km/s</unit>
           <ucd>spect.dopplerVeloc</ucd>
           <dataType xsi:type="vs:VOTableType">int</dataType>
         </column>
