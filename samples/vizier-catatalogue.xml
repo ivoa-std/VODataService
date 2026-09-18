@@ -72,7 +72,7 @@
             <accessURL use="base">https://tapvizier.cds.unistra.fr/TAPVizieR/tap</accessURL>
         </interface>
     </capability>
-    <capability xsi:type="cs:ConeSearch" standardID="ivo://ivoa.net/std/ConeSearch">
+    <capability xsi:type="vs:CapabilityForTable" standardID="ivo://ivoa.net/std/ConeSearch">
         <description>Cone search capability for table J/AJ/151/120/table1 (3CR Sources 0.5&lt;z&lt;1 Observed with Herschel)</description>
         <interface xsi:type="vs:ParamHTTP" role="std">
             <accessURL use="base">https://vizier.cds.unistra.fr/viz-bin/conesearch/J/AJ/151/120/table1?</accessURL>
@@ -80,18 +80,9 @@
             <mirrorURL title="VizieR at SAAO: SAAO, South Africa">http://vizieridia.saao.ac.za/viz-bin/conesearch/J/AJ/151/120/table1?</mirrorURL>
             <queryType>GET</queryType>
             <resultType>text/xml+votable</resultType>
-            <!-- a future cone search 2 will have more parameters -->
-            <param>
-                <name>TABLE</name>
-                <stats>
-                    <option>"J/AJ/151/120/table1"</option>
-                </stats>
-            </param>
+            <testQuery>RA=4.129583&amp;DEC=79.280556&amp;SR=0.005</testQuery>
         </interface>
-        <maxSR>180.0</maxSR><maxRecords>50000</maxRecords><verbosity>true</verbosity>
-        <testQuery>
-            <ra>4.129583</ra><dec>79.280556</dec><sr>0.005555555555555556</sr>
-        </testQuery>
+        <forTable>"J/AJ/151/120/table1"</forTable>
     </capability>
     <capability xsi:type="cs:ConeSearch" standardID="ivo://ivoa.net/std/ConeSearch">
         <description>Cone search capability for table J/AJ/151/120/table2 (3CR Sources z&lt;0.5 Observed with Herschel)</description>
