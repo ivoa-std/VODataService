@@ -340,6 +340,13 @@ data that may be available for a given instrument setup, or for
 simulation data to match with their observations.  VODataService 1.3
 accomodates these use cases by introducing a \xmlel{dataSource} element.
 
+\paragraph{I have found a table containing interesting data.  How do I
+query it?} Here, researchers have used data discovery queries to find,
+for instance, a table containing data for objects out to redshift 8.
+This comes in a resource with five tables and eight capabilities – which
+capability can they use to query the table they found?  VODataService
+1.3 offers the capability type CapabilityForTable that allows clients
+to narrow down a resource's capabilities by the table(s) they operate on.
 
 \subsection{Additional Use Cases for Future Versions}
 
@@ -764,6 +771,8 @@ front.  At this point, the controlled vocabulary
 % GENERATED: !vocterms data-source
 \textsl{abstract-model},
 \textsl{concrete-model},
+\textsl{in-situ},
+\textsl{laboratory},
 \textsl{observation}
 % /GENERATED
 
@@ -1863,48 +1872,9 @@ desired:
        \xmlel{vs:TableParam} type.
 \end{enumerate}
 
-<<<<<<< HEAD
-\subsubsection{Linking Capabilities and Tables}
-
-In VODataService, tables and capabilities stand next to each other
-without any implied connection.  While this is suitable for protocols
-like TAP that make an entire tableset availble, it is a limitation for
-protocols like Simple Cone Search that only operate on a single table.
-
-As an example, consider a resource with three tables, one
-containing information on spectral lines employed by that
-resource's creators, the other two two sets of objects with
-radial velocities derived from some spectra, where the metadata schemes
-may be slightly different because two different instruments were used.
-
-This could have an auxiliary TAP capability serving all tables, a SLAP
-service for the spectral lines, one cone search service each for the two
-object tables, and perhaps a datalink service linking object rows to the
-progenitor spectra, which would work for both object tables.
-
-VODataService does not have generic mechanism for capturing such an n:m
-relationship between tables and capabilities.  This is because the
-uniqueness requirements on the \xmlel{id} attribute (cf.~sect.~3.3.1 in
-\citet{std:XML}) is very hard to maintain when resource
-records are frequently combined into joint documents, for instance,
-while building OAI-PMH responses.  Also, exploiting metadata of
-this type in discovery usually leads to ugly query patterns.  Finally,
-id references would break when capabilities and tables come in two
-physical documents as in VOSI.
-
-Because of these difficulties, protocols that need to link up
-capabilities and tables should use the table names (which at least for
-pragmatic reasons will be unique within a resource) to reference
-elements in the tableset.  This could, for instance, be in a
-\xmlel{stats} element of an input parameter, or in dedicated elements
-in extensions of \xmlel{vr:Capability}.  There is no provision for
-inverse (i.e., from table to capability) references; clients can build
-the inverse relationship locally.
-
 
 \subsection{Interface Type Extension: ParamHTTP}
 \label{sect:paramif}
-
 
 The \xmlel{vs:ParamHTTP} type is a specialized service interface
 description that extends the VOResource \xmlel{vr:Interface} type
@@ -2965,6 +2935,77 @@ discovery.
 
 
 
+\subsection{Capability Type Extension: CapabilityForTable}
+
+A given service may expose specific tables but not others that may be in
+a resource's tableset.  For instance, cone searches will be linked to a
+specific table in Simple Cone Search 1 \citep{2008ivoa.specQ0222P}, and
+HATS \citep{2025hatsnote} endpoints will only deliver data from a single
+table.
+
+In particular when in data discovery, clients discover a table rather
+than a service, they need to have a way to get from the table to
+services that make these tables available, which in multi-table
+tablesets may be non-trivial.  Hence, there needs to be a mechanism to
+declare which capability exposes data from which table.  This is why
+VODataService 1.3 specifies the following derivation from
+\xmlel{vr:Capability}:
+
+
+% GENERATED: !schemadoc VODataService-v1.3.xsd CapabilityForTable
+\begin{generated}
+\begingroup
+        \renewcommand*\descriptionlabel[1]{%
+        \hbox to 5.5em{\emph{#1}\hfil}}\vspace{2ex}\noindent\textbf{\xmlel{vs:CapabilityForTable} Type Schema Documentation}
+
+\noindent{\small{}A capability containing one or more references into the
+            resource's VODataService tableset.\par}
+
+\noindent{\small{}The typical case here is a cone search just exposing one of
+            several tables that are part of a resource.  Clients discovering
+            a table can then use forTable attributes to find services
+            on top of this table.\par}
+
+\vspace{1ex}\noindent\textbf{\xmlel{vs:CapabilityForTable} Type Schema Definition}
+
+\begin{lstlisting}[language=XML,basicstyle=\footnotesize]
+<xs:complexType name="CapabilityForTable" >
+  <xs:complexContent >
+    <xs:extension base="vr:Capability" >
+      <xs:sequence >
+        <xs:element name="forTable" type="xs:token" minOccurs="0"
+                  maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+\end{lstlisting}
+
+\vspace{0.5ex}\noindent\textbf{\xmlel{vs:CapabilityForTable} Extension Metadata Elements}
+
+\begingroup\small\begin{bigdescription}\item[Element \xmlel{forTable}]
+\begin{description}
+\item[Type] string: \xmlel{xs:token}
+\item[Meaning] A reference into the tableset giving one table
+                        exposed by this capability.
+\item[Occurrence] optional; multiple occurrences allowed.
+\item[Comment] This must be exactly a string as found in a
+                        table's name child.  In particular, if there are
+                        quotes or similar syntactic features in the name,
+                        this must be given here, too.
+
+\end{description}
+
+
+\end{bigdescription}\endgroup
+
+\endgroup
+\end{generated}
+
+% /GENERATED
+
+This type can be used as-is.  Protocols requiring extra metadata can
+also inherit from it.
 
 
 \appendix
@@ -2977,6 +3018,8 @@ discovery.
 \item Dropping an outdated example for how one would do ADQL functions
 in the tableset (which we don't do).
 \item Dropping StandardSTC after all.
+\item Adding a type \xmlel{vs:CapabilityForTable} for linking tables
+and capabilities.
 \end{itemize}
 
 \subsection{Changes since WD-1.3-20260324}
