@@ -2,7 +2,7 @@
 \input tthdefs
 % widen up the display a bit so that 75 column listings still fit on
 % the page
-\usepackage[width=14cm,left=4cm]{geometry}
+\usepackage[left=3cm, right=3cm, top=2cm, bottom=3cm]{geometry}
 \usepackage{listings}
 \lstloadlanguages{XML}
 \lstset{flexiblecolumns=true,tagstyle=\ttfamily,showstringspaces=False}
@@ -174,10 +174,6 @@ the cited standard rather than on the exact version):
 \begin{description}
 \item[VOResource, v1.1 \citep{2018ivoa.spec.0625P}] VOResource gives
 the fundamental types and structures extended here.
-\item[STC, v1.33 \citep{2007ivoa.spec.1030R}] The deprecated mechanism
-for declaring coverage through STCResourceProfile still uses concepts
-from version 1 of the IVOA data model for Space-Time Coordinates.  The
-updated mechanism has no such dependence any more.
 \end{description}
 
 VODataService is closely related to the following other VO standards:
@@ -250,10 +246,9 @@ use cases.
 
 \paragraph{What services have data for the Crab nebula covering the
 H$\boldsymbol\alpha$
-line taken in the second half of 2015?}  In version 1.1, this use case
-would have been covered by the \xmlel{stc:STCResourceProfile} type,
-which, however, was never properly standardised or widely adopted.  In the current
-version, the \xmlel{spatial}, \xmlel{spectral}, and \xmlel{temporal}
+line taken in the second half of 2015?}  In the current
+version of VODataService,
+the \xmlel{spatial}, \xmlel{spectral}, and \xmlel{temporal}
 children of \xmlel{coverage} enable discovery by coverage on the various
 axes.  It is worth noting that the spectral coverage is for the solar
 system barycenter, so this use case does \emph{not} immediately enable
@@ -362,11 +357,7 @@ Also, several auxiliary endpoints (mostly defined in VOSI) are declared as
 separate capabilities and need to be matched with the functional
 endpoints.  This matching is becoming a problem when multiple
 authentication schemes or mirror sites necessitate multiple sync/async
-pairs.  A longer treatment of this problem has been published while this
-document was in WD \citep{note:caproles}, but at the time of writing the
-process of finding consensus has just begun, so again a normative
-solution has to be deferred to a later version of this standard.
-
+pairs.  See \citep{note:caproles} for a longer treatment of the problem.
 
 
 \section{The VODataService Data Model}
@@ -551,11 +542,12 @@ satisfied.
 The horizontal distinction (XResource vs.~XService) is somewhat more
 subtle and will be discussed in sect.~\ref{sect:discoverdata}.
 
-Two further resource classes defined by VODataService 1.1,
-\xmlel{vs:DataCollection} and \xmlel{vs:StandardSTC},
-have been deprecated since version 1.2.
+An additional resource class defined by VODataService 1.1,
+\xmlel{vs:DataCollection}
+has been deprecated since version 1.2.
 Resource record authors are requested to migrate or discard resource
-records using these deprecated types.  \xmlel{vs:StandardSTC} has been
+records using this deprecated type.  The \xmlel{vs:StandardSTC} resource
+class defined in 1.1 has been
 dropped in VODataService 1.3 since there were no resource records using
 that type in the VO Registry. We will similarly drop
 \xmlel{vs:DataCollection} when the last records using the type have
@@ -674,7 +666,7 @@ because there is a dedicated service; the question to ask would be
 something like: in a global enumeration of SCS services, should this one
 be counted?
 \item A VOEvent stream: DataService, because VOEvent is not actually
-relational
+relational.
 \item An rsync service to pull observations of a given instrument:
 DataService, because again there is no involvement of tabular data
 (worth mentioning).
@@ -1851,7 +1843,7 @@ desired:
        \citep{std:XSD} and the VOResource specification.
 
 \item Apply a globally-defined attribute from a schema other than
-       VODataService (i.e. from a namespace other than
+       VODataService (i.e., from a namespace other than
        \url{http://www.ivoa.net/xml/VODataService/v1.1}) to any of the
        \xmlel{tableset}, \xmlel{schema},
        \xmlel{table}, and/or \xmlel{column}
@@ -2154,6 +2146,8 @@ metadata except the data type.
 
 % /GENERATED
 
+\subsubsection{Statistics for Columns and Params Derived From Them}
+
 The \xmlel{vs:Stats} type tries to encompass enough statistics to allow
 users to form a useful idea of the distribution of the values
 represented in a table column or accepted by an input parameter.  Given
@@ -2323,6 +2317,8 @@ distributions with more than a few dozen elements to the
 registry.  Indeed, outside of a few bespoke columns (e.g., obscore's
 \verb|dataproduct_type|), defining discrete statistics in Registry-bound
 tablesets is probably not overly useful.
+
+\subsubsection{Data Types in BaseParam}
 
 Leaving the data type metadatum out of \xmlel{vs:BaseParam}
 allows the different kinds of parameters derived from

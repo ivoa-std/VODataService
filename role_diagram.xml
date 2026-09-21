@@ -17,7 +17,6 @@ with missing dependencies.
 	<rec name="RegTAP" x="55" y="180"/>
 	<rec name="Resource M.D." x="55" y="230"/>
 	<thisrec name="VODataService" x="55" y="350"/>
-	<rec name="STC" x="550" y="230"/>
 	<rec name="VOSI" x="540" y="435"/>
 	<rec name="MOC" x="430" y="400"/>
   <rec name="VOUnits" x="220" y="250" w="50"/>
