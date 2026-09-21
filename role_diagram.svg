@@ -43,7 +43,6 @@
 	<svg x="55" y="180"><rect height="18" x="0" y="0" width="90" class="rec"/><text class="doclabel" y="12.5" x="45">RegTAP</text></svg>
 	<svg x="55" y="230"><rect height="18" x="0" y="0" width="90" class="rec"/><text class="doclabel" y="12.5" x="45">Resource M.D.</text></svg>
 	<svg x="55" y="350"><rect height="18" x="0" y="0" width="90" class="thisrec"/><text class="doclabel" y="12.5" x="45">VODataService</text></svg><svg x="55" y="350"><ellipse rx="60" ry="15" cx="45" cy="9" fill="none" stroke="red" stroke-width="3"/></svg>
-	<svg x="550" y="230"><rect height="18" x="0" y="0" width="90" class="rec"/><text class="doclabel" y="12.5" x="45">STC</text></svg>
 	<svg x="540" y="435"><rect height="18" x="0" y="0" width="90" class="rec"/><text class="doclabel" y="12.5" x="45">VOSI</text></svg>
 	<svg x="430" y="400"><rect height="18" x="0" y="0" width="90" class="rec"/><text class="doclabel" y="12.5" x="45">MOC</text></svg>
   <svg x="220" y="250"><rect height="18" x="0" y="0" width="50" class="rec"/><text class="doclabel" y="12.5" x="25">VOUnits</text></svg>
