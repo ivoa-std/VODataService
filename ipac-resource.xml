@@ -95,7 +95,7 @@ http://nedwww.ipac.caltech.edu/cgi-bin/nph-datasearch?search_type=Redshifts&amp;
         <column>
           <name>Published Velocity</name>
           <description>
-            The radial velocity , derived from derived from the shift
+            The radial velocity, derived from the shift
             of some spectral feature, in km/sec
           </description>
           <unit>km/s</unit>
