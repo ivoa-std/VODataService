@@ -576,7 +576,7 @@ are multiple different resources -- TAP, with its multiple tables, and
 Obscore building on top of it are the prime examples --, this model
 proved inadequate; furthermore, publishers increasingly offered data
 through multiple interfaces: An object catalogue now quite typically is
-published as both a cone search service and within a TAP service; an
+published both as a cone search service and within a TAP service; an
 image collection could have both SIAP and Obscore interfaces.
 
 Thus, the relationship between data collections and services gradually
@@ -612,7 +612,7 @@ Here is a sketch of a resource record of a table within a TAP service::
 
 \begin{lstlisting}[language=XML,basicstyle=\footnotesize]
 <ri:Resource
-  xsi:type="vs:CatalogResource"
+  xsi:type="vs:CatalogResource">
   <title>Sample Table</title>
   <identifier>ivo://example/sample</identifier>
   <curation>...</curation>
@@ -2850,7 +2850,7 @@ should only generate \xmlel{vs:VOTableType}s in \xmlel{tableset}s.
 For database types without direct VOTable counterparts (e.g., timestamp,
 point, interval), publishers should fill the \xmlel{extendedType}
 attribute to the appropriate a VOTable \xmlel{xtype} as defined by DALI
-\citep{2017ivoa.spec.0517D}.  It was envisaged to enable the use other
+\citep{2017ivoa.spec.0517D}.  It was envisaged to enable the use of other
 extended type systems by setting \xmlel{extendedSchema} to a non-empty
 value.  In this version of VODataService, this is discouraged because it
 would create interoperability problems when using extended types in data
